@@ -1,0 +1,23 @@
+{
+    "enums": {
+        "Prop": [],
+        "Theorem": ["Real.logb_pow"],
+        "ProofTerm": []
+    },
+    "values": {
+        "Empty": [],
+        "Proof": []
+    },
+    "program": ["prove", "Proof", ["Proof"]],
+    "funcs": {
+        "linarith": ["Proof", ["Proof"]],
+        "norm_num": ["Proof", ["Proof"]],
+        "omega": ["Proof", ["Proof"]],
+        "ring": ["Proof", ["Proof"]],
+        "ring_nf": ["Proof", ["Proof"]],
+        "exact": ["Proof", ["Proof", "Prop"]],
+        "rw1": ["Proof", ["Proof", "ProofTerm"]],
+
+        "empty": ["Empty", ["Empty"]]
+    }
+}
