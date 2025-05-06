@@ -1,9 +1,10 @@
-from typing import Iterable, List, Dict, DefaultDict, Optional, Union, Any
 from collections import defaultdict
-from .type import Type, EnumType, ValueType
-from .production import EnumProduction, ParamProduction, FunctionProduction, Production
+from typing import Any, DefaultDict, Dict, Iterable, List, Optional, Union
+
 from .expr import Expr
 from .predicate import Predicate
+from .production import EnumProduction, FunctionProduction, ParamProduction, Production
+from .type import EnumType, Type, ValueType
 
 
 class TypeSpec:
@@ -13,43 +14,43 @@ class TypeSpec:
         self._types = dict()
 
     def get_type(self, name: str) -> Optional[Type]:
-        '''
+        """
         Return the type associated with `name`, if it is defined.
         If the type has not been defined, return `None`
-        '''
+        """
         return self._types.get(name)
 
     def get_type_or_raise(self, name: str) -> Type:
-        '''
+        """
         Return the type associated with `name`, if it is defined.
         If the type has not been defined, raise `KeyError`
-        '''
+        """
         return self._types[name]
 
     def define_type(self, ty: Type) -> Type:
-        '''
+        """
         Add the type `ty` to this spec. Return `ty` itself.
         Raise `ValueError` if another type with duplicated name is found.
-        '''
+        """
         name = ty.name
         if name in self._types:
             raise ValueError(
-                'The type has already been defined in the Tyrell spec: {}'
-                .format(ty))
+                "The type has already been defined in the Tyrell spec: {}".format(ty)
+            )
         else:
             self._types[name] = ty
         return ty
 
     def types(self) -> Iterable[Type]:
-        '''Return an iterator for all defined types'''
+        """Return an iterator for all defined types"""
         return self._types.values()
 
     def num_types(self) -> int:
-        '''Return the total number of defined types'''
+        """Return the total number of defined types"""
         return len(self._types)
 
     def __repr(self) -> str:
-        return 'TypeSpec({})'.format([str(x) for x in self._types.values()])
+        return "TypeSpec({})".format([str(x) for x in self._types.values()])
 
 
 class ProductionSpec:
@@ -65,31 +66,31 @@ class ProductionSpec:
         self._func_map = dict()
 
     def get_production(self, id: int) -> Optional[Production]:
-        '''
+        """
         Return the production associated with `id`.
         If the id does not correspond to any production, return `None`
-        '''
+        """
         return self._productions[id] if id < len(self._productions) else None
 
     def get_production_or_raise(self, id: int) -> Production:
-        '''
+        """
         Return the production associated with `id`.
         If the id does not correspond to any production, return `KeyError`
-        '''
+        """
         try:
             return self._productions[id]
         except IndexError:
-            msg = 'Cannot find production with given id: {}'.format(id)
+            msg = "Cannot find production with given id: {}".format(id)
             raise KeyError(msg)
 
     def _get_productions_with_lhs(self, lhs: str) -> List[Production]:
         return self._lhs_map.get(lhs, [])
 
     def get_productions_with_lhs(self, ty: Union[str, Type]) -> List[Production]:
-        '''
+        """
         Return the productions whose LHS is `ty`, where `ty` can be a Type or a string representing the name of the type
         If no production is found, or `ty` is not a string or a Type, return an empty list
-        '''
+        """
         if isinstance(ty, Type):
             return self._get_productions_with_lhs(ty.name)
         elif isinstance(ty, str):
@@ -98,51 +99,51 @@ class ProductionSpec:
             return []
 
     def get_function_production(self, name: str) -> Optional[Production]:
-        '''
+        """
         Return the function production whose name is `name`.
         If no production is found, return `None`
-        '''
+        """
         return self._func_map.get(name)
 
     def get_function_production_or_raise(self, name: str) -> Production:
-        '''
+        """
         Return the function production whose name is `name`.
         If no production is found, raise `KeyError`
-        '''
+        """
         return self._func_map[name]
 
     def get_function_productions(self) -> List[Production]:
-        '''
+        """
         Return all function productions.
-        '''
+        """
         return list(self._func_map.values())
 
     def get_param_production(self, index: int) -> Optional[Production]:
-        '''
+        """
         Return the param production whose index is `index`.
         If no production is found, return `None`
-        '''
+        """
         return self._param_map.get(index)
 
     def get_param_productions(self) -> List[Production]:
-        '''
+        """
         Return all param productions
         If no production is found, return an empty list
-        '''
+        """
         return list(self._param_map.values())
 
     def get_param_production_or_raise(self, index: int) -> Production:
-        '''
+        """
         Return the function production whose name is `name`.
         If no production is found, raise `KeyError`
-        '''
+        """
         return self._param_map[index]
 
     def get_enum_production(self, ty: EnumType, value: str) -> Optional[Production]:
-        '''
+        """
         Return the enum production whose type is `type` and value is `value`.
         If no production is found, return `None`
-        '''
+        """
         if not isinstance(ty, EnumType):
             return None
         prods = self.get_productions_with_lhs(ty)
@@ -151,19 +152,19 @@ class ProductionSpec:
                 return prod
         return None
 
-    def get_enum_production_or_raise(self, ty: EnumType, value: str) -> Optional[Production]:
-        '''
+    def get_enum_production_or_raise(
+        self, ty: EnumType, value: str
+    ) -> Optional[Production]:
+        """
         Return the enum production whose type is `type` and value is `value`.
         If no production is found, raise `KeyError`
-        '''
+        """
         if not isinstance(ty, EnumType):
-            raise KeyError(
-                'The given type is not a enum type: {}'.format(ty))
+            raise KeyError("The given type is not a enum type: {}".format(ty))
         for prod in self.get_productions_with_lhs(ty):
             if prod.rhs[0] == value:
                 return prod
-        raise KeyError(
-            'Value "{}" is not in the domain of type {}'.format(value, ty))
+        raise KeyError('Value "{}" is not in the domain of type {}'.format(value, ty))
 
     def _get_next_id(self) -> int:
         return len(self._productions)
@@ -173,51 +174,56 @@ class ProductionSpec:
         self._lhs_map[prod.lhs.name].append(prod)
 
     def add_enum_production(self, lhs: EnumType, choice: int) -> EnumProduction:
-        '''
+        """
         Create a new enum production. Return the created production.
         Raise `ValueError` if `choice` is out of bound.
-        '''
+        """
         prod = EnumProduction(self._get_next_id(), lhs, choice)
         self._add_production(prod)
         return prod
 
     def add_param_production(self, lhs: ValueType, index: int) -> ParamProduction:
-        '''
+        """
         Create new param production. Return the created production.
         Raise `ValueError` if a production with the same `index` has already been created.
-        '''
+        """
         if index in self._param_map:
             raise ValueError(
-                'Parameter Production with index {} has already been created'.format(index))
+                "Parameter Production with index {} has already been created".format(
+                    index
+                )
+            )
         prod = ParamProduction(self._get_next_id(), lhs, index)
         self._param_map[index] = prod
         self._add_production(prod)
         return prod
 
-    def add_func_production(self, name: str, lhs: ValueType, rhs: List[Type], constraints: List[Expr]=[]) -> FunctionProduction:
-        '''
+    def add_func_production(
+        self, name: str, lhs: ValueType, rhs: List[Type], constraints: List[Expr] = []
+    ) -> FunctionProduction:
+        """
         Create a new function production with the given `name`, `lhs`, and `rhs`. Return the created production.
         Raise `ValueError` if a production with the same `name` has already been created
-        '''
+        """
         if name in self._func_map:
             raise ValueError(
-                'Function Production with name {} has already been created'.format(name))
-        prod = FunctionProduction(
-            self._get_next_id(), name, lhs, rhs, constraints)
+                "Function Production with name {} has already been created".format(name)
+            )
+        prod = FunctionProduction(self._get_next_id(), name, lhs, rhs, constraints)
         self._func_map[name] = prod
         self._add_production(prod)
         return prod
 
     def productions(self) -> Iterable[Production]:
-        '''Return all productions'''
+        """Return all productions"""
         return self._productions
 
     def num_productions(self) -> int:
-        '''Return the number of defined productions'''
+        """Return the number of defined productions"""
         return len(self._productions)
 
     def __repr__(self):
-        return 'ProductionSpec({})'.format([str(x) for x in self._productions])
+        return "ProductionSpec({})".format([str(x) for x in self._productions])
 
 
 class ProgramSpec:
@@ -229,8 +235,8 @@ class ProgramSpec:
     def check_value_type(ty):
         if not isinstance(ty, ValueType):
             raise ValueError(
-                'Non-value type cannot be used as program input/output: {}'.format(
-                    ty))
+                "Non-value type cannot be used as program input/output: {}".format(ty)
+            )
 
     def __init__(self, name: str, in_types: List[Type], out_type: Type):
         for ty in in_types:
@@ -265,7 +271,7 @@ class PredicateSpec:
         self._preds = list()
         self._name_map = defaultdict(list)
 
-    def add_predicate(self, name: str, args: List[Any]=[]) -> Predicate:
+    def add_predicate(self, name: str, args: List[Any] = []) -> Predicate:
         pred = Predicate(name, args)
         self._preds.append(pred)
         self._name_map[name].append(pred)
@@ -278,7 +284,7 @@ class PredicateSpec:
         return self._preds
 
     def num_predicates(self) -> int:
-        '''Return the number of predicates'''
+        """Return the number of predicates"""
         return len(self._preds)
 
 
@@ -288,16 +294,17 @@ class TyrellSpec:
     _prod_spec: ProductionSpec
     _pred_spec: PredicateSpec
 
-    def __init__(self,
-                 type_spec,
-                 prog_spec,
-                 prod_spec=ProductionSpec(),
-                 pred_spec=PredicateSpec()):
+    def __init__(
+        self,
+        type_spec,
+        prog_spec,
+        prod_spec=ProductionSpec(),
+        pred_spec=PredicateSpec(),
+    ):
         # Generate all enum productions
         self._add_enum_productions(
-            prod_spec,
-            filter(lambda ty: isinstance(ty, EnumType),
-                   type_spec.types()))
+            prod_spec, filter(lambda ty: isinstance(ty, EnumType), type_spec.types())
+        )
         # Generate all param productions
         self._add_param_productions(prod_spec, prog_spec.input)
 
@@ -361,7 +368,9 @@ class TyrellSpec:
     def get_enum_production(self, ty: EnumType, value: str) -> Optional[Production]:
         return self._prod_spec.get_enum_production(ty, value)
 
-    def get_enum_production_or_raise(self, ty: EnumType, value: str) -> Optional[Production]:
+    def get_enum_production_or_raise(
+        self, ty: EnumType, value: str
+    ) -> Optional[Production]:
         return self._prod_spec.get_enum_production_or_raise(ty, value)
 
     def productions(self) -> Iterable[Production]:
@@ -394,5 +403,5 @@ class TyrellSpec:
         return self._pred_spec.predicates()
 
     def num_predicates(self) -> int:
-        '''Return the number of predicates'''
+        """Return the number of predicates"""
         return self._pred_spec.num_predicates()

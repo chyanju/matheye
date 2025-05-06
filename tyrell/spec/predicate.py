@@ -1,4 +1,4 @@
-from typing import Any, List, Iterable
+from typing import Any, Iterable, List
 
 
 class Predicate:
@@ -21,7 +21,7 @@ class Predicate:
         return len(self._args)
 
     def __repr__(self) -> str:
-        return 'Predicate(name={}, args={})'.format(self._name, self._args)
+        return "Predicate(name={}, args={})".format(self._name, self._args)
 
     def __str__(self) -> str:
-        return '{}({})'.format(self._name, ', '.join([str(x) for x in self._args]))
+        return "{}({})".format(self._name, ", ".join([str(x) for x in self._args]))

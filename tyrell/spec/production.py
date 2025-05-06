@@ -1,14 +1,15 @@
-from typing import List, Any, cast
 from abc import ABC, abstractmethod
-from .type import Type, EnumType, ValueType
+from typing import Any, List, cast
+
 from .expr import Expr, ExprType
+from .type import EnumType, Type, ValueType
 
 
 class Production(ABC):
-    '''
+    """
     This class represent a CFG production rule for our DSL.
     Each production rule is uniquely identified by its ID in a given spec.
-    '''
+    """
 
     _id: int
     _lhs: Type
@@ -50,8 +51,9 @@ class EnumProduction(Production):
     def __init__(self, id: int, lhs: EnumType, choice: int):
         super().__init__(id, lhs)
         if choice >= len(lhs.domain):
-            msg = 'Cannot create a EnumProduction with choice {} for a domain with {} elements.'.format(
-                choice, len(lhs.domain))
+            msg = "Cannot create a EnumProduction with choice {} for a domain with {} elements.".format(
+                choice, len(lhs.domain)
+            )
             raise ValueError(msg)
         self._choice = choice
 
@@ -73,12 +75,12 @@ class EnumProduction(Production):
         return False
 
     def __repr__(self) -> str:
-        return 'EnumProduction(id={}, lhs={!r}, choice={})'.format(
-            self._id, self._lhs, self._choice)
+        return "EnumProduction(id={}, lhs={!r}, choice={})".format(
+            self._id, self._lhs, self._choice
+        )
 
     def __str__(self) -> str:
-        return 'Production {}: {} -> {}'.format(
-            self._id, self._lhs, self._get_rhs())
+        return "Production {}: {} -> {}".format(self._id, self._lhs, self._get_rhs())
 
 
 class ParamProduction(Production):
@@ -87,7 +89,7 @@ class ParamProduction(Production):
     def __init__(self, id: int, lhs: ValueType, param_id: int):
         super().__init__(id, lhs)
         if not isinstance(lhs, ValueType):
-            raise ValueError('LHS of ParamProduction must be a value type')
+            raise ValueError("LHS of ParamProduction must be a value type")
         self._param_id = param_id
 
     @property
@@ -104,12 +106,14 @@ class ParamProduction(Production):
         return False
 
     def __repr__(self) -> str:
-        return 'ParamProduction(id={}, lhs={!r}, param_id={})'.format(
-            self._id, self._lhs, self._param_id)
+        return "ParamProduction(id={}, lhs={!r}, param_id={})".format(
+            self._id, self._lhs, self._param_id
+        )
 
     def __str__(self) -> str:
-        return 'Production {}: {} -> <param {}>'.format(
-            self._id, self._lhs, self._param_id)
+        return "Production {}: {} -> <param {}>".format(
+            self._id, self._lhs, self._param_id
+        )
 
 
 class FunctionProduction(Production):
@@ -117,17 +121,24 @@ class FunctionProduction(Production):
     _rhs: List[Type]
     _constraints: List[Expr]
 
-    def __init__(self, id: int, name: str, lhs: ValueType, rhs: List[Type], constraints: List[Expr] = []):
+    def __init__(
+        self,
+        id: int,
+        name: str,
+        lhs: ValueType,
+        rhs: List[Type],
+        constraints: List[Expr] = [],
+    ):
         super().__init__(id, lhs)
         if not isinstance(lhs, ValueType):
-            raise ValueError('LHS of FunctionProduction must be a value type')
+            raise ValueError("LHS of FunctionProduction must be a value type")
         if len(rhs) == 0:
-            raise ValueError(
-                'Cannot construct a FunctionProduction with empty RHS')
+            raise ValueError("Cannot construct a FunctionProduction with empty RHS")
         for constraint in constraints:
             if constraint.type is not ExprType.BOOL:
                 raise ValueError(
-                    'Constraint does not have bool type: "{}"'.format(constraint))
+                    'Constraint does not have bool type: "{}"'.format(constraint)
+                )
         self._name = name
         self._rhs = rhs
         self._constraints = constraints
@@ -154,10 +165,11 @@ class FunctionProduction(Production):
         return False
 
     def __repr__(self) -> str:
-        return 'FunctionProduction(id={}, lhs={!r}, name={}, rhs={})'.format(
-            self._id, self._lhs, self._name, self._rhs)
+        return "FunctionProduction(id={}, lhs={!r}, name={}, rhs={})".format(
+            self._id, self._lhs, self._name, self._rhs
+        )
 
     def __str__(self) -> str:
-        return 'Production {}: {} -> {}({})'.format(
-            self._id, self._lhs, self._name,
-            ', '.join([str(x) for x in self._rhs]))
+        return "Production {}: {} -> {}({})".format(
+            self._id, self._lhs, self._name, ", ".join([str(x) for x in self._rhs])
+        )
