@@ -5,8 +5,7 @@ from ..dsl import Node, Builder
 from .enumerator import Enumerator
 from .from_iterator import FromIteratorEnumerator
 
-
-class ExhaustiveIterator:
+class DepthFirstIterator:
     _builder: Builder
     _max_depth: int
 
@@ -45,7 +44,7 @@ class ExhaustiveIterator:
             return self._do_iter(self._builder.output, 0)
 
 
-class ExhaustiveEnumerator(FromIteratorEnumerator):
+class DepthFirstEnumerator(FromIteratorEnumerator):
 
     def __init__(self, spec: TyrellSpec, max_depth: int):
-        super().__init__(ExhaustiveIterator(spec, max_depth).iter())
+        super().__init__(DepthFirstIterator(spec, max_depth).iter())

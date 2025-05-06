@@ -3,7 +3,7 @@ from lean_interact import LeanREPLConfig, LeanServer, LocalProject, Command
 
 import tyrell.spec as S
 from tyrell.interpreter import ProofBuilderInterpreter
-from tyrell.enumerator import ExhaustiveEnumerator
+from tyrell.enumerator import DepthFirstEnumerator
 from tyrell.decider import ProofDecider
 from tyrell.synthesizer import Synthesizer
 from tyrell.logger import get_logger
@@ -52,7 +52,9 @@ def extract_props(proof_sketch):
 def main():
     # load an example benchmark
     # with open("./benchmarks/minif2f/mathd_algebra_160/step0.lean", "r") as f:
-    with open("./benchmarks/minif2f/mathd_algebra_24/step3.lean", "r") as f:
+    # with open("./benchmarks/minif2f/mathd_algebra_24/step3.lean", "r") as f:
+    # with open("./benchmarks/minif2f/demos/demo0.lean", "r") as f:
+    with open("./benchmarks/minif2f/demos/demo1.lean", "r") as f:
         raw_lines = f.readlines()
     # remove the line with "hole" keyword
     raw_lines = [p for p in raw_lines if "hole" not in p]
@@ -77,7 +79,7 @@ def main():
     logger.info("Lean runner builds successfully!")
     
     synthesizer = Synthesizer(
-        enumerator=ExhaustiveEnumerator(spec=spec, max_depth=2),
+        enumerator=DepthFirstEnumerator(spec=spec, max_depth=5),
         decider=ProofDecider(
             ProofBuilderInterpreter(top_indent=1),
             proof_sketch=proof_sketch,
