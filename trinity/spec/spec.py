@@ -35,7 +35,7 @@ class TypeSpec:
         name = ty.name
         if name in self._types:
             raise ValueError(
-                "The type has already been defined in the Tyrell spec: {}".format(ty)
+                "The type has already been defined in the Trinity spec: {}".format(ty)
             )
         else:
             self._types[name] = ty
@@ -288,7 +288,7 @@ class PredicateSpec:
         return len(self._preds)
 
 
-class TyrellSpec:
+class TrinitySpec:
     _type_spec: TypeSpec
     _prog_spec: ProgramSpec
     _prod_spec: ProductionSpec

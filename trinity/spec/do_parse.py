@@ -8,7 +8,7 @@ parser = Lark_StandAlone()
 
 def parse(input_str):
     """
-    Parse Tyrell spec from an input string.
+    Parse Trinity spec from an input string.
     May raise either ``ParseError`` or ``ParseTreeProcessingError``.
     """
     parse_tree = parser.parse(input_str)
@@ -17,7 +17,7 @@ def parse(input_str):
 
 def parse_file(file_path):
     """
-    Parse Tyrell spec from an input file path.
+    Parse Trinity spec from an input file path.
     May raise either ``ParseError`` or ``ParseTreeProcessingError``.
     """
     with open(file_path, "r") as f:

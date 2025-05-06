@@ -2,13 +2,13 @@ from itertools import product
 from typing import Any, Iterator
 
 from ..dsl import Builder, Node
-from ..spec import Type, TyrellSpec
+from ..spec import TrinitySpec, Type
 from .enumerator import Enumerator
 
 
 class DepthFirstIterator:
 
-    def __init__(self, spec: TyrellSpec, max_depth: int):
+    def __init__(self, spec: TrinitySpec, max_depth: int):
         self._builder = Builder(spec)
         if max_depth <= 0:
             raise ValueError("Max depth cannot be non-positive: {}".format(max_depth))
@@ -44,7 +44,7 @@ class DepthFirstIterator:
 
 class DepthFirstEnumerator(Enumerator):
 
-    def __init__(self, spec: TyrellSpec, max_depth: int):
+    def __init__(self, spec: TrinitySpec, max_depth: int):
         super().__init__()
         self._iter = DepthFirstIterator(spec, max_depth).iter()
 

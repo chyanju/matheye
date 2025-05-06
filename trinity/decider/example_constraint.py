@@ -19,7 +19,7 @@ import z3
 from ..dsl import ApplyNode, AtomNode, Node, NodeIndexer, ParamNode
 from ..interpreter import Interpreter, InterpreterError
 from ..logger import get_logger
-from ..spec import Production, TyrellSpec, ValueType
+from ..spec import Production, TrinitySpec, ValueType
 from ..spec.expr import *
 from ..visitor import GenericVisitor
 from .assert_violation_handler import AssertionViolationHandler
@@ -29,7 +29,7 @@ from .eval_expr import eval_expr
 from .example_base import Example, ExampleDecider
 from .result import bad, ok
 
-logger = get_logger("tyrell.synthesizer.constraint")
+logger = get_logger("trinity.synthesizer.constraint")
 ImplyMap = Mapping[Tuple[Production, Expr], List[Production]]
 MutableImplyMap = MutableMapping[Tuple[Production, Expr], List[Production]]
 
@@ -199,7 +199,7 @@ class ExampleConstraintDecider(ExampleDecider):
 
     def __init__(
         self,
-        spec: TyrellSpec,
+        spec: TrinitySpec,
         interpreter: Interpreter,
         examples: List[Example],
         equal_output: Callable[[Any, Any], bool] = lambda x, y: x == y,
@@ -228,7 +228,7 @@ class ExampleConstraintDecider(ExampleDecider):
         z3_solver.add(z3.Not(z3.Implies(z3_pre, z3_post)))
         return z3_solver.check() == z3.unsat
 
-    def _build_imply_map(self, spec: TyrellSpec) -> ImplyMap:
+    def _build_imply_map(self, spec: TrinitySpec) -> ImplyMap:
         ret: MutableImplyMap = defaultdict(list)
         constrained_prods = filter(
             lambda prod: prod.is_function() and len(prod.constraints) > 0,

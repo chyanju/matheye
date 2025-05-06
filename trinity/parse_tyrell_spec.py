@@ -5,10 +5,10 @@ import click
 import trinity.spec as S
 from trinity.logger import get_logger
 
-logger = get_logger("tyrell")
+logger = get_logger("trinity")
 
 
-def print_spec(spec: S.TyrellSpec):
+def print_spec(spec: S.TrinitySpec):
     if spec.num_types() > 0:
         logger.info("Defined types:")
         for ty in spec.types():
@@ -43,12 +43,12 @@ def print_spec(spec: S.TyrellSpec):
 )
 def cli(spec_file, verbosity):
     """
-    Parse the given Tyrell DSL spec file
+    Parse the given Trinity DSL spec file
     """
     logger.setLevel(verbosity)
     try:
-        tyrell_spec = S.parse_file(spec_file)
-        print_spec(tyrell_spec)
+        trinity_spec = S.parse_file(spec_file)
+        print_spec(trinity_spec)
     except (S.ParseError, S.ParseTreeProcessingError) as e:
         logger.error("Spec parsing error: {}".format(e))
 

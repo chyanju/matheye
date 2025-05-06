@@ -6,7 +6,7 @@ import z3
 from ..dsl import ApplyNode, AtomNode, Node, NodeIndexer, ParamNode, dfs
 from ..interpreter import Interpreter, InterpreterError
 from ..logger import get_logger
-from ..spec import TyrellSpec, ValueType
+from ..spec import TrinitySpec, ValueType
 from ..spec.expr import *
 from ..visitor import GenericVisitor
 from .assert_violation_handler import AssertionViolationHandler
@@ -16,7 +16,7 @@ from .eval_expr import eval_expr
 from .example_base import Example, ExampleDecider
 from .result import bad, ok
 
-logger = get_logger("tyrell.decider.example_constraint_pruning")
+logger = get_logger("trinity.decider.example_constraint_pruning")
 
 
 class Z3Encoder(GenericVisitor):
@@ -291,7 +291,7 @@ class ExampleConstraintPruningDecider(ExampleDecider):
 
     def __init__(
         self,
-        spec: TyrellSpec,
+        spec: TrinitySpec,
         interpreter: Interpreter,
         examples: List[Example],
         equal_output: Callable[[Any, Any], bool] = lambda x, y: x == y,

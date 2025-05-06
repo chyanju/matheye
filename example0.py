@@ -9,7 +9,7 @@ from trinity.interpreter import ProofBuilderInterpreter
 from trinity.logger import get_logger
 from trinity.synthesizer import Synthesizer
 
-logger = get_logger("tyrell")
+logger = get_logger("trinity")
 
 
 def build_lean_runner():

@@ -2,7 +2,7 @@ from typing import Union
 
 import sexpdata
 
-from ..spec import EnumType, Production, TyrellSpec
+from ..spec import EnumType, Production, TrinitySpec
 from ..visitor import GenericVisitor
 from .node import *
 
@@ -26,9 +26,9 @@ class ProductionVisitor(GenericVisitor):
 class Builder:
     """A factory class to build AST node"""
 
-    _spec: TyrellSpec
+    _spec: TrinitySpec
 
-    def __init__(self, spec: TyrellSpec):
+    def __init__(self, spec: TrinitySpec):
         self._spec = spec
 
     def _make_node(self, prod: Production, children: List[Node] = []) -> Node:
@@ -120,6 +120,6 @@ class Builder:
             raise ValueError("Sexp parsing error: {}".format(e))
         return self._from_sexp(sexp)
 
-    # For convenience, expose all methods in TyrellSpec so that the client do not need to keep a reference of it
+    # For convenience, expose all methods in TrinitySpec so that the client do not need to keep a reference of it
     def __getattr__(self, attr):
         return getattr(self._spec, attr)

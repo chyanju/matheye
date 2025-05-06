@@ -29,7 +29,7 @@ class TestDSL(unittest.TestCase):
             name="test", in_types=[self._vty0], out_type=self._vty1
         )
 
-        self._spec = S.TyrellSpec(type_spec, prog_spec, prod_spec)
+        self._spec = S.TrinitySpec(type_spec, prog_spec, prod_spec)
         self._prod1 = self._spec.get_param_production_or_raise(0)
 
     def test_node(self):

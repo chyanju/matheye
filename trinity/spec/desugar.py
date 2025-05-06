@@ -4,11 +4,11 @@ from typing import List, cast
 from ..logger import get_logger
 from .expr import *
 from .parser import Visitor_Recursive
-from .spec import PredicateSpec, ProductionSpec, ProgramSpec, TypeSpec, TyrellSpec
+from .spec import PredicateSpec, ProductionSpec, ProgramSpec, TrinitySpec, TypeSpec
 from .type import EnumType, Type, ValueType
 from .util import enum_set_domain
 
-logger = get_logger("tyrell.desugar")
+logger = get_logger("trinity.desugar")
 
 
 class ParseTreeProcessingError(RuntimeError):
@@ -274,7 +274,7 @@ class PredicateCollector(Visitor_Recursive):
 
 
 def desugar(parse_tree):
-    logger.debug("Building Tyrell spec from parse tree...")
+    logger.debug("Building Trinity spec from parse tree...")
     try:
         logger.debug("Processing type definitions...")
         type_collector = TypeCollector()
@@ -298,6 +298,6 @@ def desugar(parse_tree):
         pred_collector.visit(parse_tree)
         pred_spec = pred_collector.collect()
 
-        return TyrellSpec(type_spec, prog_spec, prod_spec, pred_spec)
+        return TrinitySpec(type_spec, prog_spec, prod_spec, pred_spec)
     except (KeyError, ValueError) as e:
         raise ParseTreeProcessingError("{}".format(e))

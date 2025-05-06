@@ -2,7 +2,7 @@ from typing import List, cast
 
 from ..dsl import AtomNode, dfs
 from ..interpreter import AssertionViolation, Interpreter, InterpreterError
-from ..spec import Production, TyrellSpec
+from ..spec import Production, TrinitySpec
 from .blame import Blame
 
 
@@ -11,10 +11,10 @@ class AssertionViolationHandler:
     Automatically compute blames for dynamic type errors
     """
 
-    _spec: TyrellSpec
+    _spec: TrinitySpec
     _interp: Interpreter
 
-    def __init__(self, spec: TyrellSpec, interpreter: Interpreter):
+    def __init__(self, spec: TrinitySpec, interpreter: Interpreter):
         self._spec = spec
         self._interp = interpreter
 
