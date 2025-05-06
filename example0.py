@@ -2,12 +2,12 @@ import json
 
 from lean_interact import Command, LeanREPLConfig, LeanServer, LocalProject
 
-import tyrell.spec as S
-from tyrell.decider import ProofDecider
-from tyrell.enumerator import DepthFirstEnumerator
-from tyrell.interpreter import ProofBuilderInterpreter
-from tyrell.logger import get_logger
-from tyrell.synthesizer import Synthesizer
+import trinity.spec as S
+from trinity.decider import ProofDecider
+from trinity.enumerator import DepthFirstEnumerator
+from trinity.interpreter import ProofBuilderInterpreter
+from trinity.logger import get_logger
+from trinity.synthesizer import Synthesizer
 
 logger = get_logger("tyrell")
 

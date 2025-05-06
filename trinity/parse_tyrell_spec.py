@@ -2,8 +2,8 @@ from typing import cast
 
 import click
 
-import tyrell.spec as S
-from tyrell.logger import get_logger
+import trinity.spec as S
+from trinity.logger import get_logger
 
 logger = get_logger("tyrell")
 
