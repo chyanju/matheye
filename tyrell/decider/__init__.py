@@ -4,3 +4,5 @@ from .decider import Decider
 from .example_base import Example, ExampleDecider
 from .example_constraint import ExampleConstraintDecider
 from .example_constraint_pruning import ExampleConstraintPruningDecider
+
+from .proof import ProofDecider

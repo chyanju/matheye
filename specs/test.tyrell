@@ -1,0 +1,9 @@
+value Empty;
+value Proof;
+
+program prove(Proof) -> Proof;
+
+func norm_num: Proof -> Proof;
+func linarith: Proof -> Proof;
+
+func empty: Empty -> Empty;
