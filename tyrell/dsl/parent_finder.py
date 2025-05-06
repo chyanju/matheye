@@ -1,12 +1,13 @@
-from typing import List, Dict, Optional
-from .node import Node
+from typing import Dict, List, Optional
+
 from .iterator import dfs
+from .node import Node
 
 
 class ParentFinder:
-    '''
+    """
     A utility class providing mapping between AST Node and its parent.
-    '''
+    """
 
     _parent_map: Dict[Node, Node]
 
@@ -17,9 +18,9 @@ class ParentFinder:
                 self._parent_map[child] = node
 
     def get_parent(self, node: Node) -> Optional[Node]:
-        '''Get the parent of the node, or None if the parent cannot be found.'''
+        """Get the parent of the node, or None if the parent cannot be found."""
         return self._parent_map.get(node, None)
 
     def get_parent_or_raise(self, node: Node) -> Node:
-        '''Get the parent of the node, or raise `KeyError` if the parent cannot be found.'''
+        """Get the parent of the node, or raise `KeyError` if the parent cannot be found."""
         return self._parent_map[node]

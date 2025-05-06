@@ -1,6 +1,6 @@
-from enum import Enum, unique
 from abc import ABC, abstractmethod
-from typing import List, Dict, Union
+from enum import Enum, unique
+from typing import Dict, List, Union
 
 
 @unique
@@ -18,7 +18,7 @@ class UnaryOperator(Enum):
 
 _unary_sig: Dict[UnaryOperator, ExprType] = {
     UnaryOperator.NEG: ExprType.INT,
-    UnaryOperator.NOT: ExprType.BOOL
+    UnaryOperator.NOT: ExprType.BOOL,
 }
 
 
@@ -100,7 +100,7 @@ class Expr(ABC):
 
     @property
     @abstractmethod
-    def operands(self) -> List['Expr']:
+    def operands(self) -> List["Expr"]:
         raise NotImplementedError
 
     @property
@@ -116,7 +116,8 @@ class ConstExpr(Expr):
         super().__init__()
         if not isinstance(value, bool) and not isinstance(value, int):
             raise ValueError(
-                'ConstExpr does not accept non-boolean/int constants: {}'.format(value))
+                "ConstExpr does not accept non-boolean/int constants: {}".format(value)
+            )
         self._value = value
 
     @property
@@ -131,7 +132,8 @@ class ConstExpr(Expr):
             return ExprType.INT
         else:
             raise ValueError(
-                'ConstExpr found unknown value type: {}'.format(self._value))
+                "ConstExpr found unknown value type: {}".format(self._value)
+            )
 
     @property
     def operands(self) -> List[Expr]:
@@ -139,12 +141,12 @@ class ConstExpr(Expr):
 
     def __str__(self) -> str:
         if isinstance(self._value, bool):
-            return 'true' if self._value else 'false'
+            return "true" if self._value else "false"
         else:
             return str(self._value)
 
     def __repr__(self) -> str:
-        return 'ConstExpr({})'.format(self._value)
+        return "ConstExpr({})".format(self._value)
 
 
 class ParamExpr(Expr):
@@ -168,12 +170,12 @@ class ParamExpr(Expr):
 
     def __str__(self) -> str:
         if self._index == 0:
-            return '@ret'
+            return "@ret"
         else:
-            return '@arg{}'.format(self._index - 1)
+            return "@arg{}".format(self._index - 1)
 
     def __repr__(self) -> str:
-        return 'ParamExpr({})'.format(self._index)
+        return "ParamExpr({})".format(self._index)
 
 
 class UnaryExpr(Expr):
@@ -185,7 +187,8 @@ class UnaryExpr(Expr):
         expect_ty = unary_param_type(operator)
         if operand.type is not expect_ty:
             raise ValueError(
-                'Expression is expected to have type {}: {}'.format(expect_ty, operand))
+                "Expression is expected to have type {}: {}".format(expect_ty, operand)
+            )
         self._operator = operator
         self._operand = operand
 
@@ -206,10 +209,10 @@ class UnaryExpr(Expr):
         return unary_return_type(self._operator)
 
     def __str__(self) -> str:
-        return '({} {})'.format(self._operator.value, self._operand)
+        return "({} {})".format(self._operator.value, self._operand)
 
     def __repr__(self) -> str:
-        return 'UnaryExpr({}, {!r})'.format(self._operator.name, self._operand)
+        return "UnaryExpr({}, {!r})".format(self._operator.name, self._operand)
 
 
 class BinaryExpr(Expr):
@@ -223,15 +226,18 @@ class BinaryExpr(Expr):
             # These two operators are polymorphic
             if lhs.type is not rhs.type:
                 raise ValueError(
-                    'Expression must have the same type: {} and {}'.format(lhs, rhs))
+                    "Expression must have the same type: {} and {}".format(lhs, rhs)
+                )
         else:
             expect_ty = binary_param_type(operator)
             if lhs.type is not expect_ty:
                 raise ValueError(
-                    'Expression is expected to have type {}: {}'.format(expect_ty, lhs))
+                    "Expression is expected to have type {}: {}".format(expect_ty, lhs)
+                )
             if rhs.type is not expect_ty:
                 raise ValueError(
-                    'Expression is expected to have type {}: {}'.format(expect_ty, rhs))
+                    "Expression is expected to have type {}: {}".format(expect_ty, rhs)
+                )
         self._operator = operator
         self._lhs = lhs
         self._rhs = rhs
@@ -257,10 +263,12 @@ class BinaryExpr(Expr):
         return binary_return_type(self._operator)
 
     def __str__(self) -> str:
-        return '({} {} {})'.format(self._lhs, self._operator.value, self._rhs)
+        return "({} {} {})".format(self._lhs, self._operator.value, self._rhs)
 
     def __repr__(self) -> str:
-        return 'BinaryExpr({}, {!r}, {!r})'.format(self._operator.name, self._lhs, self._rhs)
+        return "BinaryExpr({}, {!r}, {!r})".format(
+            self._operator.name, self._lhs, self._rhs
+        )
 
 
 class CondExpr(Expr):
@@ -270,11 +278,13 @@ class CondExpr(Expr):
 
     def __init__(self, cond: Expr, true_val: Expr, false_val: Expr):
         if cond.type is not ExprType.BOOL:
-            raise ValueError(
-                'Condition is not a boolean expr: {}'.format(cond))
+            raise ValueError("Condition is not a boolean expr: {}".format(cond))
         if true_val.type is not false_val.type:
             raise ValueError(
-                'Expression must have the same type: {} and {}'.format(true_val, false_val))
+                "Expression must have the same type: {} and {}".format(
+                    true_val, false_val
+                )
+            )
         self._cond = cond
         self._true_val = true_val
         self._false_val = false_val
@@ -300,10 +310,14 @@ class CondExpr(Expr):
         return self._true_val.type
 
     def __str__(self) -> str:
-        return '(if {} then {} else {})'.format(self._cond, self._true_val, self._false_val)
+        return "(if {} then {} else {})".format(
+            self._cond, self._true_val, self._false_val
+        )
 
     def __repr__(self) -> str:
-        return 'CondExpr({!r}, {!r}, {!r})'.format(self._cond, self._true_val, self._false_val)
+        return "CondExpr({!r}, {!r}, {!r})".format(
+            self._cond, self._true_val, self._false_val
+        )
 
 
 class PropertyExpr(Expr):
@@ -315,7 +329,10 @@ class PropertyExpr(Expr):
         super().__init__()
         if operand.type is not ExprType.VALUE:
             raise ValueError(
-                'PropertyExpr cannot be applied to non-value operand: {}'.format(operand))
+                "PropertyExpr cannot be applied to non-value operand: {}".format(
+                    operand
+                )
+            )
         self._name = name
         self._type = type
         self._operand = operand
@@ -337,7 +354,9 @@ class PropertyExpr(Expr):
         return [self._operand]
 
     def __str__(self) -> str:
-        return '{}({})'.format(self._name, self._operand)
+        return "{}({})".format(self._name, self._operand)
 
     def __repr__(self) -> str:
-        return 'PropertyExpr({}, {}, {!r})'.format(self._name, self._type, self._operand)
+        return "PropertyExpr({}, {}, {!r})".format(
+            self._name, self._type, self._operand
+        )

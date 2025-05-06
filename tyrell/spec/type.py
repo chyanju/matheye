@@ -1,10 +1,12 @@
 from abc import ABC, abstractmethod
-from typing import List, Dict, Tuple, Optional, Any
+from typing import Any, Dict, List, Optional, Tuple
+
 from .expr import ExprType
 
 
 class Type(ABC):
-    '''A generic class for types in DSL'''
+    """A generic class for types in DSL"""
+
     _name: str
 
     @abstractmethod
@@ -38,7 +40,7 @@ class Type(ABC):
 
 
 class EnumType(Type):
-    '''A special kind of type whose domain is finite and specified up-front'''
+    """A special kind of type whose domain is finite and specified up-front"""
 
     _domain: List[Any]
 
@@ -57,7 +59,7 @@ class EnumType(Type):
         return False
 
     def __repr__(self) -> str:
-        return 'EnumType({}, domain={})'.format(self._name, self._domain)
+        return "EnumType({}, domain={})".format(self._name, self._domain)
 
 
 class ValueType(Type):
@@ -68,7 +70,7 @@ class ValueType(Type):
         self._properties = dict()
         for name, ty in properties:
             if name in self._properties:
-                raise ValueError('Duplicate property name: {}'.format(name))
+                raise ValueError("Duplicate property name: {}".format(name))
             self._properties[name] = ty
 
     def is_enum(self) -> bool:
@@ -88,4 +90,4 @@ class ValueType(Type):
         return list(self._properties.items())
 
     def __repr__(self) -> str:
-        return 'ValueType({}, properties={})'.format(self._name, self._properties)
+        return "ValueType({}, properties={})".format(self._name, self._properties)

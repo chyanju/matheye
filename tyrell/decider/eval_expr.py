@@ -1,6 +1,7 @@
-from typing import ClassVar, Callable, List, Dict, Any
-from ..spec.expr import *
+from typing import Any, Callable, ClassVar, Dict, List
+
 from ..interpreter import Interpreter
+from ..spec.expr import *
 from ..visitor import GenericVisitor
 
 
@@ -11,9 +12,11 @@ class ExprVisitor(GenericVisitor):
 
     _unary_dispatch_table: ClassVar[Dict[UnaryOperator, Callable[[Any], Any]]] = {
         UnaryOperator.NOT: lambda x: not x,
-        UnaryOperator.NEG: lambda x: -x
+        UnaryOperator.NEG: lambda x: -x,
     }
-    _binary_dispatch_table: ClassVar[Dict[BinaryOperator, Callable[[Any, Any], Any]]] = {
+    _binary_dispatch_table: ClassVar[
+        Dict[BinaryOperator, Callable[[Any, Any], Any]]
+    ] = {
         BinaryOperator.ADD: lambda x, y: x + y,
         BinaryOperator.SUB: lambda x, y: x - y,
         BinaryOperator.MUL: lambda x, y: x * y,
@@ -28,7 +31,7 @@ class ExprVisitor(GenericVisitor):
         BinaryOperator.GE: lambda x, y: x >= y,
         BinaryOperator.AND: lambda x, y: x and y,
         BinaryOperator.OR: lambda x, y: x or y,
-        BinaryOperator.IMPLY: lambda x, y: (not x) or y
+        BinaryOperator.IMPLY: lambda x, y: (not x) or y,
     }
 
     def __init__(self, interp: Interpreter, in_values: List[Any], out_value: Any):
@@ -67,13 +70,16 @@ class ExprVisitor(GenericVisitor):
         method = getattr(self._interp, method_name, None)
         if method is None:
             raise ValueError(
-                'Cannot find the required apply method: {}'.format(method_name))
+                "Cannot find the required apply method: {}".format(method_name)
+            )
         return method(arg)
 
     @staticmethod
     def _apply_method_name(name):
-        return 'apply_' + name
+        return "apply_" + name
 
 
-def eval_expr(interpreter: Interpreter, in_values: List[Any], out_value: Any, expr: Expr):
+def eval_expr(
+    interpreter: Interpreter, in_values: List[Any], out_value: Any, expr: Expr
+):
     return ExprVisitor(interpreter, in_values, out_value).visit(expr)

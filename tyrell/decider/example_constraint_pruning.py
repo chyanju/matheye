@@ -1,21 +1,22 @@
 from collections import defaultdict
-from typing import cast, Any, Callable, Dict, List, Tuple, Set, FrozenSet
+from typing import Any, Callable, Dict, FrozenSet, List, Set, Tuple, cast
+
 import z3
 
+from ..dsl import ApplyNode, AtomNode, Node, NodeIndexer, ParamNode, dfs
+from ..interpreter import Interpreter, InterpreterError
+from ..logger import get_logger
+from ..spec import TyrellSpec, ValueType
+from ..spec.expr import *
+from ..visitor import GenericVisitor
 from .assert_violation_handler import AssertionViolationHandler
 from .blame import Blame
 from .constraint_encoder import ConstraintEncoder
-from .example_base import Example, ExampleDecider
 from .eval_expr import eval_expr
-from .result import ok, bad
-from ..spec import TyrellSpec, ValueType
-from ..dsl import Node, AtomNode, ParamNode, ApplyNode, NodeIndexer, dfs
-from ..interpreter import Interpreter, InterpreterError
-from ..logger import get_logger
-from ..spec.expr import *
-from ..visitor import GenericVisitor
+from .example_base import Example, ExampleDecider
+from .result import bad, ok
 
-logger = get_logger('tyrell.decider.example_constraint_pruning')
+logger = get_logger("tyrell.decider.example_constraint_pruning")
 
 
 class Z3Encoder(GenericVisitor):
@@ -34,30 +35,30 @@ class Z3Encoder(GenericVisitor):
 
     def get_z3_var(self, node: Node, pname: str, ptype: ExprType):
         node_id = self._indexer.get_id(node)
-        var_name = '{}_n{}'.format(pname, node_id)
+        var_name = "{}_n{}".format(pname, node_id)
         if ptype is ExprType.INT:
             return z3.Int(var_name)
         elif ptype is ExprType.BOOL:
             return z3.Bool(var_name)
         else:
-            raise RuntimeError('Unrecognized ExprType: {}'.format(ptype))
+            raise RuntimeError("Unrecognized ExprType: {}".format(ptype))
 
     def _get_constraint_var(self, node: Node, index: int):
         node_id = self._indexer.get_id(node)
-        var_name = '@n{}_c{}'.format(node_id, index)
+        var_name = "@n{}_c{}".format(node_id, index)
         return var_name
 
     def encode_param_alignment(self, node: Node, ty: ValueType, index: int):
         if not isinstance(ty, ValueType):
-            raise RuntimeError(
-                'Unexpected program output type: {}'.format(ty))
+            raise RuntimeError("Unexpected program output type: {}".format(ty))
         for pname, pty in ty.properties:
             actual = self.get_z3_var(node, pname, pty)
             expected_expr = PropertyExpr(pname, pty, ParamExpr(index))
             expected = eval_expr(
-                self._interp, self._example.input, self._example.output, expected_expr)
+                self._interp, self._example.input, self._example.output, expected_expr
+            )
             if expected == -1:
-                expected = self.get_z3_var(node, pname + '_sym', pty)
+                expected = self.get_z3_var(node, pname + "_sym", pty)
             self._solver.add(actual == expected)
 
     def encode_output_alignment(self, prog: Node):
@@ -66,8 +67,7 @@ class Z3Encoder(GenericVisitor):
 
     def visit_param_node(self, param_node: ParamNode):
         param_ty = cast(ValueType, param_node.type)
-        self.encode_param_alignment(
-            param_node, param_ty, param_node.index + 1)
+        self.encode_param_alignment(param_node, param_ty, param_node.index + 1)
 
     def visit_atom_node(self, atom_node: AtomNode):
         pass
@@ -82,6 +82,7 @@ class Z3Encoder(GenericVisitor):
             pname = prop_expr.name
             pty = prop_expr.type
             return self.get_z3_var(node, pname, pty)
+
         constraint_visitor = ConstraintEncoder(encode_property)
         for index, constraint in enumerate(apply_node.production.constraints):
             cname = self._get_constraint_var(apply_node, index)
@@ -169,7 +170,8 @@ class ConstraintInterpreter(GenericVisitor):
         method = getattr(self._interp, method_name, None)
         if method is None:
             raise NotImplementedError(
-                'Cannot find the required eval method: {}'.format(method_name))
+                "Cannot find the required eval method: {}".format(method_name)
+            )
         method_output = method(apply_node, in_values)
 
         # Now that we get more info on the method output, we can use it to refine the constraints
@@ -189,28 +191,29 @@ class ConstraintInterpreter(GenericVisitor):
             method = getattr(self._interp, method_name, None)
             if method is None:
                 raise ValueError(
-                    'Cannot find the required apply method: {}'.format(method_name))
+                    "Cannot find the required apply method: {}".format(method_name)
+                )
             property_value = method(value)
             self._z3_encoder.add(z3_var == property_value)
+
         property_finder = PropertyFinder(encode_property)
         for constraint in apply_node.production.constraints:
             property_finder.visit(constraint)
 
         if self._z3_encoder.is_unsat():
             raise PruningException(
-                'Solver returns unsat when evaluating {}'.format(apply_node),
-                apply_node
+                "Solver returns unsat when evaluating {}".format(apply_node), apply_node
             )
 
         return method_output
 
     @staticmethod
     def _eval_method_name(name):
-        return 'eval_' + name
+        return "eval_" + name
 
     @staticmethod
     def _apply_method_name(name):
-        return 'apply_' + name
+        return "apply_" + name
 
 
 class BlameFinder:
@@ -231,9 +234,13 @@ class BlameFinder:
     def _get_blames(self) -> List[List[Blame]]:
         return [list(x) for x in self._blames_collection]
 
-    def process_examples(self, examples: List[Example], equal_output: Callable[[Any, Any], bool]):
+    def process_examples(
+        self, examples: List[Example], equal_output: Callable[[Any, Any], bool]
+    ):
         try:
-            all_ok = all([self.process_example(example, equal_output) for example in examples])
+            all_ok = all(
+                [self.process_example(example, equal_output) for example in examples]
+            )
             if all_ok:
                 return ok()
             else:
@@ -254,7 +261,9 @@ class BlameFinder:
                     blame_nodes.add(node)
             return bad([[Blame(node, node.production) for node in blame_nodes]])
 
-    def process_example(self, example: Example, equal_output: Callable[[Any, Any], bool]):
+    def process_example(
+        self, example: Example, equal_output: Callable[[Any, Any], bool]
+    ):
         z3_encoder = Z3Encoder(self._interp, self._indexer, example)
         z3_encoder.encode_output_alignment(self._prog)
         z3_encoder.visit(self._prog)
@@ -270,7 +279,9 @@ class BlameFinder:
             return False
         else:
             # If abstract semantics is satisfiable, start interpretation
-            constraint_interpreter = ConstraintInterpreter(self._interp, example.input, z3_encoder)
+            constraint_interpreter = ConstraintInterpreter(
+                self._interp, example.input, z3_encoder
+            )
             interpreter_output = constraint_interpreter.visit(self._prog)
             return equal_output(interpreter_output, example.output)
 
@@ -278,11 +289,13 @@ class BlameFinder:
 class ExampleConstraintPruningDecider(ExampleDecider):
     assert_handler: AssertionViolationHandler
 
-    def __init__(self,
-                 spec: TyrellSpec,
-                 interpreter: Interpreter,
-                 examples: List[Example],
-                 equal_output: Callable[[Any, Any], bool]=lambda x, y: x == y):
+    def __init__(
+        self,
+        spec: TyrellSpec,
+        interpreter: Interpreter,
+        examples: List[Example],
+        equal_output: Callable[[Any, Any], bool] = lambda x, y: x == y,
+    ):
         super().__init__(interpreter, examples, equal_output)
         self._assert_handler = AssertionViolationHandler(spec, interpreter)
 

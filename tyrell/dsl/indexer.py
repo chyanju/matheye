@@ -1,13 +1,14 @@
-from typing import List, Dict, Optional
 from collections import deque
-from .node import Node
+from typing import Dict, List, Optional
+
 from .iterator import bfs
+from .node import Node
 
 
 class NodeIndexer:
-    '''
+    """
     A utility class providing bidirectional mapping between AST Node and integer ID.
-    '''
+    """
 
     _node_map: Dict[Node, int]
     _index_map: List[Node]
@@ -25,25 +26,25 @@ class NodeIndexer:
             self._add_node(node)
 
     def get_id(self, node: Node) -> Optional[int]:
-        '''Get the ID of the node, or None if the node is not indexed.'''
+        """Get the ID of the node, or None if the node is not indexed."""
         return self._node_map.get(node, None)
 
     def get_id_or_raise(self, node: Node) -> int:
-        '''Get the ID of the node, or raise `KeyError` if the node is not indexed.'''
+        """Get the ID of the node, or raise `KeyError` if the node is not indexed."""
         return self._node_map[node]
 
     def get_node(self, nid: int) -> Optional[Node]:
-        '''Get the Node which corresponds to the given ID, or None if the ID is not assigned.'''
+        """Get the Node which corresponds to the given ID, or None if the ID is not assigned."""
         if nid >= 0 and nid < len(self._index_map):
             return self._index_map[nid]
         else:
             return None
 
     def get_node_or_raise(self, nid: int) -> Node:
-        '''Get the Node which corresponds to the given ID, or raise `KeyError` if the ID is not assigned.'''
+        """Get the Node which corresponds to the given ID, or raise `KeyError` if the ID is not assigned."""
         res = self.get_node(nid)
         if res is None:
-            raise KeyError('Node ID is not assigned: {}'.format(nid))
+            raise KeyError("Node ID is not assigned: {}".format(nid))
         return res
 
     @property

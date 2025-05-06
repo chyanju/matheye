@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
-from typing import Callable, Iterable, Optional, Any
+from typing import Any, Callable, Iterable, Optional
+
 from ..dsl import Node
 from .context import Context
 
@@ -14,7 +15,7 @@ class InterpreterError(RuntimeError):
 
 
 class GeneralError(InterpreterError):
-    def __init__(self, msg: str=""):
+    def __init__(self, msg: str = ""):
         super().__init__(msg)
 
 
@@ -24,7 +25,13 @@ class AssertionViolation(InterpreterError):
     _reason: Callable[[Any], bool]
     _captures: Iterable[int]
 
-    def __init__(self, node: Node, index: int, reason: Callable[[Any], bool], captures: Iterable[int]):
+    def __init__(
+        self,
+        node: Node,
+        index: int,
+        reason: Callable[[Any], bool],
+        captures: Iterable[int],
+    ):
         super().__init__()
         self._node = node
         self._index = index

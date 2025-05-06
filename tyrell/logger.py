@@ -1,15 +1,16 @@
-import click
 import logging
+
+import click
 
 
 class _ColorFormatter(logging.Formatter):
     colors = {
-        'error': dict(fg='red'),
-        'exception': dict(fg='red'),
-        'critical': dict(fg='red'),
-        'debug': dict(fg='green'),
-        'info': dict(fg='blue'),
-        'warning': dict(fg='yellow')
+        "error": dict(fg="red"),
+        "exception": dict(fg="red"),
+        "critical": dict(fg="red"),
+        "debug": dict(fg="green"),
+        "info": dict(fg="blue"),
+        "warning": dict(fg="yellow"),
     }
 
     def format(self, record):
@@ -17,9 +18,8 @@ class _ColorFormatter(logging.Formatter):
             level = record.levelname.lower()
             msg = record.getMessage()
             if level in self.colors:
-                prefix = click.style('[{}] '.format(level),
-                                     **self.colors[level])
-                msg = '\n'.join(prefix + x for x in msg.splitlines())
+                prefix = click.style("[{}] ".format(level), **self.colors[level])
+                msg = "\n".join(prefix + x for x in msg.splitlines())
             return msg
         return logging.Formatter.format(self, record)
 
@@ -40,7 +40,7 @@ _click_handler.formatter = _ColorFormatter()
 
 
 def get_logger(name):
-    '''Return a colorful logger with the given name'''
+    """Return a colorful logger with the given name"""
     logger = logging.getLogger(name)
     logger.handlers = [_click_handler]
     logger.propagate = False

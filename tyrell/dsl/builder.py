@@ -1,8 +1,10 @@
 from typing import Union
+
 import sexpdata
-from .node import *
-from ..spec import TyrellSpec, Production, EnumType
+
+from ..spec import EnumType, Production, TyrellSpec
 from ..visitor import GenericVisitor
+from .node import *
 
 
 class ProductionVisitor(GenericVisitor):
@@ -22,7 +24,7 @@ class ProductionVisitor(GenericVisitor):
 
 
 class Builder:
-    '''A factory class to build AST node'''
+    """A factory class to build AST node"""
 
     _spec: TyrellSpec
 
@@ -33,57 +35,61 @@ class Builder:
         return ProductionVisitor(children).visit(prod)
 
     def make_node(self, src: Union[int, Production], children: List[Node] = []) -> Node:
-        '''
+        """
         Create a node with the given production index and children.
         Raise `KeyError` or `ValueError` if an error occurs
-        '''
+        """
         if isinstance(src, int):
             return self._make_node(self._spec.get_production_or_raise(src), children)
         elif isinstance(src, Production):
             # Sanity check first
             prod = self._spec.get_production_or_raise(src.id)
             if src != prod:
-                raise ValueError(
-                    'DSL Builder found inconsistent production instance')
+                raise ValueError("DSL Builder found inconsistent production instance")
             return self._make_node(prod, children)
         else:
             raise ValueError(
-                'make_node() only accepts int or production, but found {}'.format(src))
+                "make_node() only accepts int or production, but found {}".format(src)
+            )
 
     def make_enum(self, name: str, value: str) -> Node:
-        '''
+        """
         Convenient method to create an enum node.
         Raise `KeyError` or `ValueError` if an error occurs
-        '''
+        """
         ty = self.get_type_or_raise(name)
         prod = self.get_enum_production_or_raise(ty, value)
         return self.make_node(prod.id)
 
     def make_param(self, index: int) -> Node:
-        '''
+        """
         Convenient method to create a param node.
         Raise `KeyError` or `ValueError` if an error occurs
-        '''
+        """
         prod = self.get_param_production_or_raise(index)
         return self.make_node(prod.id)
 
     def make_apply(self, name: str, args: List[Node]) -> Node:
-        '''
+        """
         Convenient method to create an apply node.
         Raise `KeyError` or `ValueError` if an error occurs
-        '''
+        """
         prod = self.get_function_production_or_raise(name)
         return self.make_node(prod.id, args)
 
     def _from_sexp(self, sexp) -> Node:
-        if not isinstance(sexp, list) or len(sexp) < 2 or not isinstance(sexp[0].value(), str):
+        if (
+            not isinstance(sexp, list)
+            or len(sexp) < 2
+            or not isinstance(sexp[0].value(), str)
+        ):
             # None of our nodes serializes to atom
-            msg = 'Cannot parse sexp into dsl.Node: {}'.format(sexp)
+            msg = "Cannot parse sexp into dsl.Node: {}".format(sexp)
             raise ValueError(msg)
         sym = sexp[0].value()
 
         # First check for param node
-        if sym == '@param':
+        if sym == "@param":
             index = int(sexp[1])
             return self.make_param(index)
 
@@ -103,15 +109,15 @@ class Builder:
         return self.make_apply(sym, args)
 
     def from_sexp_string(self, sexp_str: str) -> Node:
-        '''
+        """
         Convenient method to create an AST from an sexp string.
         Raise `KeyError` or `ValueError` if an error occurs
-        '''
+        """
         try:
             sexp = sexpdata.loads(sexp_str)
         # This library is liberal on its exception raising...
         except Exception as e:
-            raise ValueError('Sexp parsing error: {}'.format(e))
+            raise ValueError("Sexp parsing error: {}".format(e))
         return self._from_sexp(sexp)
 
     # For convenience, expose all methods in TyrellSpec so that the client do not need to keep a reference of it

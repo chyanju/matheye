@@ -1,14 +1,16 @@
-from typing import cast, List
-from ..spec import TyrellSpec, Production
+from typing import List, cast
+
 from ..dsl import AtomNode, dfs
-from ..interpreter import Interpreter, InterpreterError, AssertionViolation
+from ..interpreter import AssertionViolation, Interpreter, InterpreterError
+from ..spec import Production, TyrellSpec
 from .blame import Blame
 
 
 class AssertionViolationHandler:
-    '''
+    """
     Automatically compute blames for dynamic type errors
-    '''
+    """
+
     _spec: TyrellSpec
     _interp: Interpreter
 
@@ -29,7 +31,9 @@ class AssertionViolationHandler:
                 blame_nodes.append(child)
         return [Blame(n, n.production) for n in blame_nodes]
 
-    def _analyze_enum(self, prod: Production, error: AssertionViolation) -> List[List[Blame]]:
+    def _analyze_enum(
+        self, prod: Production, error: AssertionViolation
+    ) -> List[List[Blame]]:
         blames = list()
         arg_node = error.arg
         blame_base = self._compute_blame_base(error)

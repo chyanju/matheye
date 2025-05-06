@@ -1,33 +1,35 @@
-from typing import (
-    cast,
-    Tuple,
-    Optional,
-    List,
-    Set,
-    FrozenSet,
-    Mapping,
-    MutableMapping,
-    Any,
-    Callable,
-    Iterator
-)
 from collections import defaultdict
 from itertools import permutations
-import z3
-from ..interpreter import Interpreter, InterpreterError
-from ..dsl import Node, AtomNode, ParamNode, ApplyNode, NodeIndexer
-from ..spec import Production, ValueType, TyrellSpec
-from ..spec.expr import *
-from ..logger import get_logger
-from ..visitor import GenericVisitor
-from .example_base import Example, ExampleDecider
-from .blame import Blame
-from .assert_violation_handler import AssertionViolationHandler
-from .eval_expr import eval_expr
-from .constraint_encoder import ConstraintEncoder
-from .result import ok, bad
+from typing import (
+    Any,
+    Callable,
+    FrozenSet,
+    Iterator,
+    List,
+    Mapping,
+    MutableMapping,
+    Optional,
+    Set,
+    Tuple,
+    cast,
+)
 
-logger = get_logger('tyrell.synthesizer.constraint')
+import z3
+
+from ..dsl import ApplyNode, AtomNode, Node, NodeIndexer, ParamNode
+from ..interpreter import Interpreter, InterpreterError
+from ..logger import get_logger
+from ..spec import Production, TyrellSpec, ValueType
+from ..spec.expr import *
+from ..visitor import GenericVisitor
+from .assert_violation_handler import AssertionViolationHandler
+from .blame import Blame
+from .constraint_encoder import ConstraintEncoder
+from .eval_expr import eval_expr
+from .example_base import Example, ExampleDecider
+from .result import bad, ok
+
+logger = get_logger("tyrell.synthesizer.constraint")
 ImplyMap = Mapping[Tuple[Production, Expr], List[Production]]
 MutableImplyMap = MutableMapping[Tuple[Production, Expr], List[Production]]
 
@@ -50,40 +52,40 @@ class Z3Encoder(GenericVisitor):
 
     def get_z3_var(self, node: Node, pname: str, ptype: ExprType):
         node_id = self._indexer.get_id(node)
-        var_name = '{}_n{}'.format(pname, node_id)
+        var_name = "{}_n{}".format(pname, node_id)
         if ptype is ExprType.INT:
             return z3.Int(var_name)
         elif ptype is ExprType.BOOL:
             return z3.Bool(var_name)
         else:
-            raise RuntimeError('Unrecognized ExprType: {}'.format(ptype))
+            raise RuntimeError("Unrecognized ExprType: {}".format(ptype))
 
     def _get_constraint_var(self, node: Node, index: int):
         node_id = self._indexer.get_id(node)
-        var_name = '@n{}_c{}'.format(node_id, index)
+        var_name = "@n{}_c{}".format(node_id, index)
         return var_name
 
     def _get_alignment_var(self, node: Node, index: int):
         node_id = self._indexer.get_id(node)
         # var_name = '@n{}_a{}'.format(node_id, index)
-        var_name = '@n{}_a{}'.format(node_id, self._alignment_counter)
+        var_name = "@n{}_a{}".format(node_id, self._alignment_counter)
         self._alignment_counter += 1
         return var_name
 
     def encode_param_alignment(self, node: Node, ty: ValueType, index: int):
         if not isinstance(ty, ValueType):
-            raise RuntimeError(
-                'Unexpected program output type: {}'.format(ty))
+            raise RuntimeError("Unexpected program output type: {}".format(ty))
         for pname, pty in ty.properties:
             actual = self.get_z3_var(node, pname, pty)
             expected_expr = PropertyExpr(pname, pty, ParamExpr(index))
             expected = eval_expr(
-                self._interp, self._example.input, self._example.output, expected_expr)
+                self._interp, self._example.input, self._example.output, expected_expr
+            )
             # self._solver.add(actual == expected)
             qname = self._get_alignment_var(node, index)
             self._unsat_map[qname] = (node, index)
-            self._alignment_map[qname] = (actual==expected)
-            self._solver.assert_and_track(actual==expected, qname)
+            self._alignment_map[qname] = actual == expected
+            self._solver.assert_and_track(actual == expected, qname)
 
     def encode_output_alignment(self, prog: Node):
         out_ty = cast(ValueType, prog.type)
@@ -91,8 +93,7 @@ class Z3Encoder(GenericVisitor):
 
     def visit_param_node(self, param_node: ParamNode):
         param_ty = cast(ValueType, param_node.type)
-        self.encode_param_alignment(
-            param_node, param_ty, param_node.index + 1)
+        self.encode_param_alignment(param_node, param_ty, param_node.index + 1)
 
     def visit_atom_node(self, atom_node: AtomNode):
         pass
@@ -107,6 +108,7 @@ class Z3Encoder(GenericVisitor):
             pname = prop_expr.name
             pty = prop_expr.type
             return self.get_z3_var(node, pname, pty)
+
         constraint_visitor = ConstraintEncoder(encode_property)
         for index, constraint in enumerate(apply_node.production.constraints):
             cname = self._get_constraint_var(apply_node, index)
@@ -151,12 +153,17 @@ class BlameFinder:
     def _get_raw_blames(self) -> List[List[Blame]]:
         return [list(x) for x in self._blames_collection]
 
-    def _expand_blame(self, base_nodes: List[Node], node: Node, exprs: List[Expr]) -> Iterator[FrozenSet[Blame]]:
+    def _expand_blame(
+        self, base_nodes: List[Node], node: Node, exprs: List[Expr]
+    ) -> Iterator[FrozenSet[Blame]]:
         def gen_blame(prod):
             return frozenset(
-                [Blame(node=n, production=(prod if n is node else n.production))
-                 for n in base_nodes]
+                [
+                    Blame(node=n, production=(prod if n is node else n.production))
+                    for n in base_nodes
+                ]
             )
+
         other_prods = set(self._imply_map.get((node.production, exprs[0]), []))
         for expr in exprs[1:]:
             p = self._imply_map.get((node.production, expr), [])
@@ -190,11 +197,13 @@ class ExampleConstraintDecider(ExampleDecider):
     _imply_map: ImplyMap
     _assert_handler: AssertionViolationHandler
 
-    def __init__(self,
-                 spec: TyrellSpec,
-                 interpreter: Interpreter,
-                 examples: List[Example],
-                 equal_output: Callable[[Any, Any], bool]=lambda x, y: x == y):
+    def __init__(
+        self,
+        spec: TyrellSpec,
+        interpreter: Interpreter,
+        examples: List[Example],
+        equal_output: Callable[[Any, Any], bool] = lambda x, y: x == y,
+    ):
         super().__init__(interpreter, examples, equal_output)
         self._imply_map = self._build_imply_map(spec)
         self._assert_handler = AssertionViolationHandler(spec, interpreter)
@@ -202,14 +211,15 @@ class ExampleConstraintDecider(ExampleDecider):
     def _check_implies(self, pre, post) -> bool:
         def encode_property(prop_expr: PropertyExpr):
             param_expr = cast(ParamExpr, prop_expr.operand)
-            var_name = '{}_p{}'.format(prop_expr.name, param_expr.index)
+            var_name = "{}_p{}".format(prop_expr.name, param_expr.index)
             ptype = prop_expr.type
             if ptype is ExprType.INT:
                 return z3.Int(var_name)
             elif ptype is ExprType.BOOL:
                 return z3.Bool(var_name)
             else:
-                raise RuntimeError('Unrecognized ExprType: {}'.format(ptype))
+                raise RuntimeError("Unrecognized ExprType: {}".format(ptype))
+
         constraint_visitor = ConstraintEncoder(encode_property)
 
         z3_solver = z3.Solver()
@@ -222,7 +232,8 @@ class ExampleConstraintDecider(ExampleDecider):
         ret: MutableImplyMap = defaultdict(list)
         constrained_prods = filter(
             lambda prod: prod.is_function() and len(prod.constraints) > 0,
-            spec.productions())
+            spec.productions(),
+        )
         for prod0, prod1 in permutations(constrained_prods, r=2):
             if len(prod0.rhs) != len(prod1.rhs):
                 continue
@@ -234,9 +245,9 @@ class ExampleConstraintDecider(ExampleDecider):
         return ret
 
     def analyze(self, prog):
-        '''
+        """
         This version of analyze() tries to analyze the reason why a synthesized program fails, if it does not pass all the tests.
-        '''
+        """
         failed_examples = self.get_failed_examples(prog)
         if len(failed_examples) == 0:
             return ok()

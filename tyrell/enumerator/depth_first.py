@@ -1,19 +1,17 @@
-from typing import Iterator
 from itertools import product
-from ..spec import TyrellSpec, Type
-from ..dsl import Node, Builder
+from typing import Any, Iterator
+
+from ..dsl import Builder, Node
+from ..spec import Type, TyrellSpec
 from .enumerator import Enumerator
-from .from_iterator import FromIteratorEnumerator
+
 
 class DepthFirstIterator:
-    _builder: Builder
-    _max_depth: int
 
     def __init__(self, spec: TyrellSpec, max_depth: int):
         self._builder = Builder(spec)
         if max_depth <= 0:
-            raise ValueError(
-                'Max depth cannot be non-positive: {}'.format(max_depth))
+            raise ValueError("Max depth cannot be non-positive: {}".format(max_depth))
         self._max_depth = max_depth
 
     def _do_iter(self, ty: Type, curr_depth: int) -> Iterator[Node]:
@@ -44,7 +42,17 @@ class DepthFirstIterator:
             return self._do_iter(self._builder.output, 0)
 
 
-class DepthFirstEnumerator(FromIteratorEnumerator):
+class DepthFirstEnumerator(Enumerator):
 
     def __init__(self, spec: TyrellSpec, max_depth: int):
-        super().__init__(DepthFirstIterator(spec, max_depth).iter())
+        super().__init__()
+        self._iter = DepthFirstIterator(spec, max_depth).iter()
+
+    def next(self):
+        try:
+            return next(self._iter)
+        except StopIteration:
+            return None
+
+    def update(self, info: Any = None):
+        pass
