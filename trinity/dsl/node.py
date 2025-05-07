@@ -9,8 +9,6 @@ from ..spec import EnumProduction, FunctionProduction, ParamProduction, Producti
 class Node(ABC):
     """Generic and abstract AST Node"""
 
-    _prod: Production
-
     @abstractmethod
     def __init__(self, prod: Production):
         self._prod = prod
@@ -95,20 +93,6 @@ class AtomNode(LeafNode):
     def to_sexp(self):
         return [Symbol(self.type.name), self.data]
 
-    def deep_eq(self, other) -> bool:
-        """
-        Test whether this node is the same with ``other``. This function performs deep comparison rather than just comparing the object identity.
-        """
-        if isinstance(other, AtomNode):
-            return self.type == other.type and self.data == other.data
-        return False
-
-    def deep_hash(self) -> int:
-        """
-        This function performs deep hash rather than just hashing the object identity.
-        """
-        return hash((self.type, str(self.data)))
-
     def __repr__(self) -> str:
         return "AtomNode({})".format(self.data)
 
@@ -143,20 +127,6 @@ class ParamNode(LeafNode):
 
     def to_sexp(self):
         return [Symbol("@param"), self.index]
-
-    def deep_eq(self, other) -> bool:
-        """
-        Test whether this node is the same with ``other``. This function performs deep comparison rather than just comparing the object identity.
-        """
-        if isinstance(other, ParamNode):
-            return self.index == other.index
-        return False
-
-    def deep_hash(self) -> int:
-        """
-        This function performs deep hash rather than just hashing the object identity.
-        """
-        return hash(self.index)
 
     def __repr__(self) -> str:
         return "ParamNode({})".format(self.index)
@@ -217,24 +187,6 @@ class ApplyNode(Node):
 
     def to_sexp(self):
         return [Symbol(self.name)] + [x.to_sexp() for x in self.args]
-
-    def deep_eq(self, other) -> bool:
-        """
-        Test whether this node is the same with ``other``. This function performs deep comparison rather than just comparing the object identity.
-        """
-        if isinstance(other, ApplyNode):
-            return (
-                self.name == other.name
-                and len(self.args) == len(other.args)
-                and all(x.deep_eq(y) for x, y in zip(self.args, other.args))
-            )
-        return False
-
-    def deep_hash(self) -> int:
-        """
-        This function performs deep hash rather than just hashing the object identity.
-        """
-        return hash((self.name, tuple([x.deep_hash() for x in self.args])))
 
     def __repr__(self) -> str:
         return "ApplyNode({}, {})".format(self.name, self._args)

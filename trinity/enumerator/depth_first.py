@@ -15,7 +15,7 @@ class DepthFirstIterator:
         self._max_depth = max_depth
 
     def _do_iter(self, ty: Type, curr_depth: int) -> Iterator[Node]:
-        prods = self._builder.get_productions_with_lhs(ty)
+        prods = self._builder._spec.get_productions_with_lhs(ty)
         enum_prods, param_prods, func_prods = [], [], []
         force_leaf = curr_depth >= self._max_depth - 1
         for prod in prods:
@@ -36,10 +36,10 @@ class DepthFirstIterator:
                 yield self._builder.make_node(prod, children)
 
     def iter(self) -> Iterator[Node]:
-        if self._builder.num_productions() == 0:
+        if self._builder._spec.num_productions() == 0:
             return iter(())
         else:
-            return self._do_iter(self._builder.output, 0)
+            return self._do_iter(self._builder._spec.output, 0)
 
 
 class DepthFirstEnumerator(Enumerator):

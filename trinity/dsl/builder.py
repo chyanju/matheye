@@ -8,7 +8,6 @@ from .node import *
 
 
 class ProductionVisitor(GenericVisitor):
-    _children: List[Node]
 
     def __init__(self, children: List[Node]):
         self._children = children
@@ -25,8 +24,6 @@ class ProductionVisitor(GenericVisitor):
 
 class Builder:
     """A factory class to build AST node"""
-
-    _spec: TrinitySpec
 
     def __init__(self, spec: TrinitySpec):
         self._spec = spec
@@ -77,48 +74,18 @@ class Builder:
         prod = self.get_function_production_or_raise(name)
         return self.make_node(prod.id, args)
 
-    def _from_sexp(self, sexp) -> Node:
-        if (
-            not isinstance(sexp, list)
-            or len(sexp) < 2
-            or not isinstance(sexp[0].value(), str)
-        ):
-            # None of our nodes serializes to atom
-            msg = "Cannot parse sexp into dsl.Node: {}".format(sexp)
-            raise ValueError(msg)
-        sym = sexp[0].value()
-
-        # First check for param node
-        if sym == "@param":
-            index = int(sexp[1])
-            return self.make_param(index)
-
-        # Next, check for atom node
-        ty = self.get_type(sym)
-        if ty is not None and ty.is_enum():
-            if isinstance(sexp[1], list):
-                # Could be a enum list
-                value = [str(x) for x in sexp[1]]
-                return self.make_enum(ty.name, value)
-            else:
-                value = str(sexp[1])
-                return self.make_enum(ty.name, value)
-
-        # Finally, check for apply node
-        args = [self._from_sexp(x) for x in sexp[1:]]
-        return self.make_apply(sym, args)
-
-    def from_sexp_string(self, sexp_str: str) -> Node:
-        """
-        Convenient method to create an AST from an sexp string.
-        Raise `KeyError` or `ValueError` if an error occurs
-        """
-        try:
-            sexp = sexpdata.loads(sexp_str)
-        # This library is liberal on its exception raising...
-        except Exception as e:
-            raise ValueError("Sexp parsing error: {}".format(e))
-        return self._from_sexp(sexp)
+    # def from_jsonexp(self, jsonexp: List) -> Node:
+    #     match jsonexp:
+    #         case [f, *rs] if isinstance(f, str):
+    #             fprod = self._spec.get_function_production(f)
+    #             assert len(fprod.rhs) == len(
+    #                 args
+    #             ), f"invalid number of arguments for {f}"
+    #             args = [self.from_jsonexp(p) for p in rs]
+    #             fnode = self.make_node(fprod, args)
+    #             return fnode
+    #         case _:
+    #             raise Exception(f"unsupported jsonexp shape: {jsonexp}")
 
     # For convenience, expose all methods in TrinitySpec so that the client do not need to keep a reference of it
     def __getattr__(self, attr):
