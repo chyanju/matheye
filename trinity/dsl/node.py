@@ -42,10 +42,6 @@ class Node(ABC):
     def children(self) -> List["Node"]:
         raise NotImplementedError
 
-    @abstractmethod
-    def to_sexp(self):
-        raise NotImplementedError
-
 
 class LeafNode(Node):
     """Generic and abstract class for AST nodes that have no children"""
@@ -90,9 +86,6 @@ class AtomNode(LeafNode):
     def is_param(self) -> bool:
         return False
 
-    def to_sexp(self):
-        return [Symbol(self.type.name), self.data]
-
     def __repr__(self) -> str:
         return "AtomNode({})".format(self.data)
 
@@ -124,9 +117,6 @@ class ParamNode(LeafNode):
 
     def is_param(self) -> bool:
         return True
-
-    def to_sexp(self):
-        return [Symbol("@param"), self.index]
 
     def __repr__(self) -> str:
         return "ParamNode({})".format(self.index)
@@ -184,9 +174,6 @@ class ApplyNode(Node):
 
     def is_apply(self) -> bool:
         return True
-
-    def to_sexp(self):
-        return [Symbol(self.name)] + [x.to_sexp() for x in self.args]
 
     def __repr__(self) -> str:
         return "ApplyNode({}, {})".format(self.name, self._args)

@@ -64,6 +64,8 @@ def main():
     # with open("./benchmarks/minif2f/mathd_algebra_24/step3.lean", "r") as f:
     # with open("./benchmarks/minif2f/demos/demo0.lean", "r") as f:
     with open("./benchmarks/minif2f/demos/demo1.lean", "r") as f:
+    # with open("./benchmarks/minif2f/demos/demo2.lean", "r") as f:
+    # with open("./benchmarks/minif2f/demos/demo3.lean", "r") as f:
         raw_lines = f.readlines()
     # remove the line with "hole" keyword
     raw_lines = [p for p in raw_lines if "hole" not in p]
@@ -90,7 +92,7 @@ def main():
     logger.info("Lean runner builds successfully!")
 
     synthesizer = Synthesizer(
-        enumerator=DepthFirstEnumerator(spec=spec, max_depth=5),
+        enumerator=DepthFirstEnumerator(spec=spec, max_depth=2),
         decider=ProofDecider(
             ProofBuilderInterpreter(top_indent=1),
             proof_sketch=proof_sketch,

@@ -4,6 +4,7 @@ set_option maxHeartbeats 0
 open BigOperators Real Nat Topology Rat
 macro "hole" : tactic => `(tactic| admit)
 
+-- benchmarks/minif2f-dspv2/test/mathd_algebra_143.lean
 example (f g : ℝ → ℝ)
   (h₀ : ∀ (x : ℝ), f x = x + 1)
   (h₁ : ∀ (x : ℝ), g x = x ^ 2 + 3)
