@@ -1,0 +1,11 @@
+import Mathlib
+import Aesop
+set_option maxHeartbeats 0
+open BigOperators Real Nat Topology Rat
+macro "hole" : tactic => `(tactic| admit)
+theorem h₄ (x : ℝ) (h₀ : x ≠ 0) (h₁ : 12 / (x * x) * (x ^ 4 / (14 * x)) * (35 / (3 * x)) = 12 * x ^ 4 * 35 / (x * x * (14 * x) * (3 * x))) (h₂ : x * x * (14 * x) * (3 * x) = 42 * x ^ 4) (h₃ : 12 / (x * x) * (x ^ 4 / (14 * x)) * (35 / (3 * x)) = 12 * x ^ 4 * 35 / (42 * x ^ 4)) : 12 * x ^ 4 * 35 / (42 * x ^ 4) = 10 :=
+  by
+  have h₄₁ : x ^ 4 ≠ 0 := by sorry
+  have h₄₂ : (12 * x ^ 4 * 35) / (42 * x ^ 4) = 10 := by sorry
+  --  rw [h₄₂]
+  hole

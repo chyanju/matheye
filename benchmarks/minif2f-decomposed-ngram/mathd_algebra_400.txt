@@ -1,0 +1,3 @@
+have exact
+have exact
+apply_fun ring_nf

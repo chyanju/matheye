@@ -1,0 +1,13 @@
+sorry
+have have exact
+have ring_nf nlinarith
+simpa
+have have exact
+linarith
+linarith
+have interval_cases norm_num
+by_contra have have linarith
+omega
+have nlinarith
+exact_mod_cast
+rw_1

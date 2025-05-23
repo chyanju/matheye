@@ -1,0 +1,1 @@
+theorem h₇ (a b : ℝ) (h₀ : 2 ^ a = 32) (h₁ : a ^ b = 125) (h₂ : a > 0) (h₄ : Real.log (2 ^ a) = Real.log 32) (h₅ : a * Real.log 2 = 5 * Real.log 2) (h₆ : Real.log 32 = 5 * Real.log 2) : a * Real.log 2 = 5 * Real.log 2 := by linarith

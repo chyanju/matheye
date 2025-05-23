@@ -1,0 +1,35 @@
+have have
+have
+have have have have nlinarith
+have rw_1 linarith
+ring
+have rw_1 linarith
+ring
+have rw_1 linarith
+ring
+nlinarith
+have have have exact
+have rw_1 linarith
+ring
+nlinarith
+nlinarith
+have have nlinarith
+have rw_1 linarith
+ring
+have rw_1 linarith
+ring
+have have have nlinarith
+have rw_1 linarith
+ring
+have rw_1 linarith
+ring
+have rw_1 linarith
+ring
+have have have have have have exact
+nlinarith
+nlinarith
+nlinarith
+nlinarith
+calc
+have nlinarith_2
+nlinarith

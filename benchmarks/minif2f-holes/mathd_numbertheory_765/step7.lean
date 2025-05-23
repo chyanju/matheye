@@ -1,0 +1,10 @@
+import Mathlib
+import Aesop
+set_option maxHeartbeats 0
+open BigOperators Real Nat Topology Rat
+macro "hole" : tactic => `(tactic| admit)
+theorem h₈ (x : ℤ) (h₀ : x < 0) (h₁ : 24 * x % 1199 = 15) (h : ¬x ≤ -449) (h₂ : x ≥ -448) (h₄ : 24 * x % 1199 = 15) (h₅ : 24 * x % 1199 = 24 * x % 1199) (h₆ : 24 * x % 1199 = 15) : x % 1199 = 750 := by
+  have h₉ : (24 : ℤ) * x % 1199 = 15 := h₆
+  have h₁₀ : (x : ℤ) % 1199 = 750 := by sorry
+  --  exact h₁₀
+  hole

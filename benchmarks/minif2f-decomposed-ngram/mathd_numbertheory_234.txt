@@ -1,0 +1,30 @@
+have have have have have have exact
+by_contra have have have have linarith
+omega
+exact
+norm_num
+linarith
+by_contra have have have have linarith
+omega
+exact
+norm_num
+linarith
+have have omega
+
+
+have have have have have omega
+
+
+
+
+by_contra have have have interval_cases norm_num try
+omega
+have omega
+
+omega
+have have rw_1_@1 omega
+
+
+have have rw_2
+
+

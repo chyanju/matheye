@@ -1,0 +1,1 @@
+theorem h₃ (k : ℕ) (hk : k ∈ Finset.Icc 1 20) (h₁ : 1 ≤ k) (h₂ : k ≤ 20) : k ≥ 1 := by exact_mod_cast h₁

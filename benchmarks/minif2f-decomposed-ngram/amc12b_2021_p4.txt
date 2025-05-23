@@ -1,0 +1,21 @@
+have have have have exact
+have have have exact
+
+have exact_mod_cast
+
+field_simp
+have exact
+norm_cast
+have have exact
+
+have rw_1
+have linarith
+
+have have exact
+have have have exact
+exact_mod_cast
+exact_mod_cast
+linarith
+have have exact
+
+rw_1

@@ -1,0 +1,1 @@
+theorem h₅ (h : ∀ (a b : ℤ), (∃ i j, a = 2 * i ∧ b = 2 * j) ↔ ∃ k, a ^ 2 + b ^ 2 = 8 * k) (h₁ : (∃ i j, 4 = 2 * i ∧ 2 = 2 * j) ↔ ∃ k, 4 ^ 2 + 2 ^ 2 = 8 * k) (h₂ : ∃ i j, 4 = 2 * i ∧ 2 = 2 * j) (k : ℤ) (hk h₄ : 4 ^ 2 + 2 ^ 2 = 8 * k) : k = 5 / 2 := by ring_nf at h₄ ⊢ <;> omega

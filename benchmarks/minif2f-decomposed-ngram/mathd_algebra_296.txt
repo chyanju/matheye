@@ -1,0 +1,8 @@
+have have have have have have apply
+norm_num
+norm_num
+norm_num
+norm_num_1
+have rw_1
+norm_num_8
+rw_1

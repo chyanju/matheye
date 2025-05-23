@@ -1,0 +1,13 @@
+have have have have have rw_1
+have
+ring
+field_simp_5
+field_simp_5
+have rw_1
+ring_nf
+rw_1 rw_1
+have have rw_1
+exact
+have rw_1 norm_num
+field_simp_1 ring_nf
+rw_1 rw_1

@@ -1,0 +1,31 @@
+have have have have have have have have have exact
+by_contra have have have rw_1_@1 norm_num
+simpa
+rw_1 rw_1 simp
+rw_2 norm_num
+by_contra have have have rw_1_@1 have have have rw_2_@1 norm_num
+simpa
+rw_1 rw_1 simp
+
+linarith
+have field_simp nlinarith_1
+
+rw_1
+have have rw_1_@1 have have have have exact
+
+rw_1
+
+have rw_1_@1 exact
+field_simp_1
+
+field_simp_1_@1 nlinarith_3
+linarith
+have rw_1_@1 ring_nf apply nlinarith_4
+
+rw_1 rw_1 norm_num
+have rw_1
+rw_1
+rw_1 field_simp_2
+field_simp_1
+norm_cast norm_num_4_@1 field_simp_3_@1 ring_nf norm_num norm_cast
+rw_1 norm_num_1_@2

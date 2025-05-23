@@ -1,0 +1,1 @@
+theorem h₅ (S : Finset ℝ) (h₀ : ∀ (x : ℝ), x ∈ S ↔ 0 ≤ x ∧ x ≤ π ∧ sin (π / 2 * cos x) = cos (π / 2 * sin x)) (h₁ : S = {0, π / 2}) (h₄ : π > 0) : π / 2 > 0 := by linarith

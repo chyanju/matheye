@@ -1,0 +1,7 @@
+import Mathlib
+import Aesop
+set_option maxHeartbeats 0
+open BigOperators Real Nat Topology Rat
+macro "hole" : tactic => `(tactic| admit)
+theorem h₅ (x : ℝ) (m : ℚ) (h₀ : 1 / cos x + tan x = 22 / 7) (h₁ : 1 / sin x + 1 / tan x = (↑m : ℝ)) (h_cos_ne_zero : cos x ≠ 0) (h h₂ : sin x = 0) (h₃ : tan x = 0) (h₄ : 1 / cos x + 0 = 22 / 7) : 1 / cos x = 22 / 7 := by -- linarith
+  hole

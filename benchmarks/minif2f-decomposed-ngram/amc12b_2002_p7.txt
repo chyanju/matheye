@@ -1,0 +1,20 @@
+have have have have have have exact
+have exact
+rw_2
+have have have rw_2_@1 ring_nf try
+
+
+
+have interval_cases norm_num
+by_contra have have linarith
+omega
+have have exact
+
+have have have exact
+
+
+have nlinarith
+nlinarith
+rw_2
+rw_2
+rw_3 norm_num

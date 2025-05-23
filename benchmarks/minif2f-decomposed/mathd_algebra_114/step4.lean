@@ -1,0 +1,1 @@
+theorem h₂₁ (a : ℝ) (h₀ : a = 8) (h₁ : a > 0) : a ^ 2 > 0 := by positivity

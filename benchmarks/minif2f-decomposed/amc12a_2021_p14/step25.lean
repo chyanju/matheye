@@ -1,0 +1,6 @@
+theorem h₃₅ (h₁ : ∀ k ∈ Finset.Icc 1 20, logb (5 ^ k) (3 ^ k ^ 2) = (↑k : ℝ) * logb 5 3) (h₂ : ∑ k ∈ Finset.Icc 1 20, logb (5 ^ k) (3 ^ k ^ 2) = 210 * logb 5 3) (k : ℕ) (hk : k ∈ Finset.Icc 1 100) (h₃₁ : logb (9 ^ k) (25 ^ k) = Real.log (25 ^ k) / Real.log (9 ^ k)) (h₃₂ : Real.log (25 ^ k) = (↑k : ℝ) * Real.log 25) (h₃₃ : Real.log (9 ^ k) = (↑k : ℝ) * Real.log 9) (h₃₄ : Real.log 25 = 2 * Real.log 5) : Real.log 9 = 2 * Real.log 3 :=
+  by
+  have h₃₅₁ : Real.log 9 = Real.log (3 ^ 2) := by sorry
+  rw [h₃₅₁]
+  have h₃₅₂ : Real.log (3 ^ 2) = 2 * Real.log 3 := by sorry
+  rw [h₃₅₂]

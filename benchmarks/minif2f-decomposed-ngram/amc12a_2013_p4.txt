@@ -1,0 +1,11 @@
+have have have have apply
+have linarith
+<failed
+have rw_1
+ring_nf
+ring_nf
+ring_nf
+have field_simp_1
+positivity
+norm_num_5_@1
+norm_num_1_@1

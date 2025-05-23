@@ -1,0 +1,17 @@
+have have have simpa
+norm_num
+intro have have rw_1 have have have have_1 have have
+linarith
+ring_nf
+ring_nf field_simp_1 ring_nf
+exact
+exact
+linarith_1
+have linarith
+have have nlinarith
+exact_mod_cast
+nlinarith
+have have have exact
+intro induction'
+
+

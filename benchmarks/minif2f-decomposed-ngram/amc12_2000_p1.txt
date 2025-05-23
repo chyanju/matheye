@@ -1,0 +1,53 @@
+have have have have have have have have have have exact
+by_contra have rw_1_@1 norm_num
+omega
+by_contra have rw_1_@1 norm_num
+omega
+by_contra have rw_1_@1 norm_num
+omega
+have have exact
+apply have exact
+have have exact
+use ring_nf
+
+rw_1_@1 exact
+have have exact
+have exact
+have have rw_1_@1 exact
+apply
+ring
+rw_1_@1 exact
+have have exact
+use ring_nf
+rw_1_@1 exact
+have have exact
+
+norm_num
+have have exact
+
+norm_num
+have have exact
+
+norm_num
+have have have rcases rcases rcases norm_num_3_@1
+have have have have exact
+
+
+
+have have interval_cases norm_num
+
+
+have have have have exact
+
+
+
+have have interval_cases norm_num
+
+
+have have have have exact
+
+
+
+have have interval_cases norm_num
+
+

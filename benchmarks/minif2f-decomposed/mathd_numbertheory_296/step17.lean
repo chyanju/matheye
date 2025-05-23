@@ -1,0 +1,1 @@
+theorem h₇ (n : ℕ) (h₀ : 2 ≤ n) (h₁ : ∃ x, x ^ 3 = n) (t : ℕ) (ht : t ^ 4 = n) (h₃ : t ≥ 2) (h₄ : t ≥ 8) (h₅ : t ^ 4 ≥ 8 ^ 4) (h₆ : n = t ^ 4) : n ≥ 4096 := by rw [h₆] <;> norm_num at h₅ ⊢ <;> linarith

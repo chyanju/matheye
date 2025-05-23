@@ -1,0 +1,37 @@
+have have have
+rw_1 norm_num
+have have rw_1_@2
+positivity
+
+rw_1
+have have have rw_1
+
+
+rw_1_@2 have rw_1
+have have have have have have rw_1
+have rw_1
+rw_1
+norm_num
+rw_1 norm_num
+norm_num
+rw_1 norm_num
+positivity
+norm_num
+
+rw_1
+apply
+rw_2
+norm_num_1
+have rw_1
+have have have have have rw_1
+have rw_1
+rw_1
+norm_num
+rw_1 norm_num
+norm_num
+rw_1 norm_num
+positivity
+norm_num
+rw_1
+apply
+rw_1 rw_1

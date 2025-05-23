@@ -1,0 +1,5 @@
+have have exact
+nlinarith_1_@1
+have have linarith
+ring_nf
+linarith

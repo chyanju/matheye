@@ -1,0 +1,9 @@
+have have have have exact
+have exact
+rw_1 rw_1_@1 simp_1_@2
+have exact
+have exact
+rw_1 simp_1_@2
+have exact
+simp_1_@1
+rw_1 rw_1 rw_1

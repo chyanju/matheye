@@ -1,0 +1,9 @@
+have have have exact
+rw_1_@1 linear_combination
+rw_1_@1 exact
+have have rw_1 have field_simp_6 ring_nf norm_num
+
+have have calc
+norm_num_2
+linear_combination
+norm_num_2

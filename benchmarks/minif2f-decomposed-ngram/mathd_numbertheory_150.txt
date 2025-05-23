@@ -1,0 +1,3 @@
+have linarith
+by_contra have interval_cases norm_num_1_@1
+linarith

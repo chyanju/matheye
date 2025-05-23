@@ -1,0 +1,1 @@
+theorem h₂ (f : ℤ → ℤ) (h₀ : ∀ (n : ℤ), Odd n → f n = n ^ 2) (h₁ : ∀ (n : ℤ), Even n → f n = n ^ 2 - 4 * n - 1) : Even 4 := by rw [Int.even_iff] <;> norm_num <;> trivial

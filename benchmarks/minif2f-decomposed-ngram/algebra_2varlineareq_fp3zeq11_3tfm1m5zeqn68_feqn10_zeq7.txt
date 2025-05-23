@@ -1,0 +1,31 @@
+have have have have have have have have have exact
+have have simp_18_@1
+
+
+have have simp_18_@1
+
+
+have simp_7_@1 try try try
+
+have simp_11_@1 try try try
+
+have have have exact
+
+
+have have exact
+
+linarith
+have have have have exact
+
+
+
+
+have have have exact
+
+
+apply simp_all_8
+have have have exact
+
+
+apply simp_all_8
+exact

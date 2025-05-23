@@ -1,0 +1,10 @@
+have have have exact
+have exact
+have have have rw_1_@1 linarith
+
+
+linarith
+have exact
+have rw_1_@1 linarith
+
+exact

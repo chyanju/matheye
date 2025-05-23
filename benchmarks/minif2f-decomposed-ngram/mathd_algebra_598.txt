@@ -1,0 +1,41 @@
+have have have have have have have have
+have have have have exact
+rw_1
+rw_1_@1 exact
+have linarith
+norm_num
+field_simp linarith
+have have have have exact
+rw_1
+rw_1_@1 exact
+have linarith
+norm_num
+field_simp linarith
+have have have have exact
+rw_1
+rw_1_@1 exact
+have linarith
+norm_num
+field_simp linarith
+have have have have exact
+rw_1
+rw_1_@1 exact
+have linarith
+norm_num
+field_simp linarith
+rw_4 have have have have have field_simp_4 ring_nf
+norm_num
+
+
+
+have rw_1 have rw_1
+norm_num
+rw_1 norm_num
+have rw_1 have rw_1
+norm_num
+rw_1 norm_num
+rw_1 have have rw_2 have field_simp_1 ring_nf
+
+
+have linarith
+norm_num

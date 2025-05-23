@@ -1,0 +1,1 @@
+theorem h₀₁  : Real.log 27 = Real.log (3 ^ 3) := by norm_num

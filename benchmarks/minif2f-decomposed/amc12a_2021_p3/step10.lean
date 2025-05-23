@@ -1,0 +1,1 @@
+theorem h₅ (x y : ℕ) (h₀ : x + y = 17402) (h₁ : 10 ∣ x) (h₂ : x / 10 = y) (h₃ : x = 10 * y) (h₄ : y = 1582) : x = 15820 := by rw [h₃, h₄] <;> norm_num

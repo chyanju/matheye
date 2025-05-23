@@ -1,0 +1,1 @@
+theorem h₂ (a b : ℝ) (h₀ : a = -1) (h₁ : b = 5) : -a = 1 := by rw [h₀] <;> norm_num

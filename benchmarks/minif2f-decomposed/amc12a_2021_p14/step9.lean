@@ -1,0 +1,2 @@
+theorem h₅₂ (k : ℕ) (hk : k ∈ Finset.Icc 1 20) (h₁ : 1 ≤ k) (h₂ : k ≤ 20) (h₃ : k ≥ 1) (h₄ : k ≤ 20) (h₅₁ : logb (5 ^ k) (3 ^ k ^ 2) = Real.log (3 ^ k ^ 2) / Real.log (5 ^ k)) : Real.log (3 ^ k ^ 2) = (↑k : ℝ) ^ 2 * Real.log 3 := by
+  rw [Real.log_pow] <;> norm_cast <;> field_simp <;> ring

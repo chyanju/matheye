@@ -1,0 +1,7 @@
+have have have apply
+rw_1
+have exact
+have have rw_1
+
+apply exact
+rw_1 norm_num

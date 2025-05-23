@@ -1,0 +1,575 @@
+norm_num
+have rw_1 norm_num
+apply norm_num
+have rw_1 norm_num
+apply norm_num
+have rw_1 norm_num
+apply norm_num
+have rw_1 norm_num
+apply norm_num
+have rw_1 norm_num
+apply norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num
+have rw_1 have rw_1 rw_1 norm_num linarith
+apply norm_num
+norm_num

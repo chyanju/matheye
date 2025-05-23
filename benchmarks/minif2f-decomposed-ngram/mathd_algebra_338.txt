@@ -1,0 +1,18 @@
+have have have have exact
+have linarith
+have have rw_2_@1 linarith
+have linarith
+have linarith
+linarith
+have linarith
+have linarith
+linarith
+have rw_2 norm_num
+have linarith
+have linarith
+linarith
+have rw_2 norm_num
+have linarith
+have linarith
+linarith
+rw_3 norm_num

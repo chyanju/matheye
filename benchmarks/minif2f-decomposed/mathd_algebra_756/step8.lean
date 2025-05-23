@@ -1,0 +1,2 @@
+theorem h₅ (a b : ℝ) (h₀ : 2 ^ a = 32) (h₁ : a ^ b = 125) (h₂ : a > 0) (h₄ : Real.log (2 ^ a) = Real.log 32) : a * Real.log 2 = Real.log 32 := by
+  rw [Real.log_rpow (by norm_num : (2 : ℝ) > 0)] at h₄ <;> simp_all [Real.log_pow] <;> ring_nf at * <;> linarith

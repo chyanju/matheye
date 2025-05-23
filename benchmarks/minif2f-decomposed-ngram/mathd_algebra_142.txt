@@ -1,0 +1,13 @@
+have have have exact
+have have exact
+have have have have have exact
+
+
+linarith
+ring_nf
+linarith
+linarith
+have have rw_1_@1 linarith
+
+
+rw_2 norm_num

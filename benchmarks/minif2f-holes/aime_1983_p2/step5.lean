@@ -1,0 +1,7 @@
+import Mathlib
+import Aesop
+set_option maxHeartbeats 0
+open BigOperators Real Nat Topology Rat
+macro "hole" : tactic => `(tactic| admit)
+theorem h₆ (x p : ℝ) (f : ℝ → ℝ) (h₀ : 0 < p ∧ p < 15) (h₁ : p ≤ x ∧ x ≤ 15) (h₂ : f x = |x - p| + |x - 15| + |x - p - 15|) (h₃ : x - p ≥ 0) (h₄ : x - 15 ≤ 0) (h₅ : x - p - 15 ≤ 0) : |x - p| = x - p := by -- rw [abs_of_nonneg h₃] <;> linarith
+  hole

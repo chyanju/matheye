@@ -1,0 +1,1 @@
+theorem h₂₂ (x y : ℝ) (h₀ : (x + y) / 2 = 7) (h₁ : √(x * y) = √19) (h₂₁ : (x + y) / 2 = 7) : x + y = 14 := by linarith

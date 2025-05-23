@@ -1,0 +1,36 @@
+have
+apply intro simp_only_3 constructor intro have have have have
+
+
+
+have rw_1_@1 have have have have have have have have cases
+have rw_1 ring_nf
+rw_1
+
+have have have have
+have have have have linarith
+
+
+linarith
+nlinarith_1
+have nlinarith_3
+apply constructor nlinarith_3
+have have nlinarith_3
+
+linarith
+have have nlinarith_3
+
+nlinarith_3
+apply exact
+apply_1 linarith
+linarith
+
+apply constructor nlinarith_3
+
+
+
+
+rw_2 have norm_num_3
+have have linarith_1_@2
+
+linarith

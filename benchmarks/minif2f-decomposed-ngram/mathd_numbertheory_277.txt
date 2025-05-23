@@ -1,0 +1,23 @@
+have have have have have have exact
+by_contra rw_1_@1 simp_1_@1
+by_contra rw_1_@1 simp_1_@1
+have rw_1 rw_2
+rw_1_@1
+have exact
+norm_num_1
+have exact
+norm_num_1
+by_contra have have have have have have have rcases rcases norm_num try
+omega
+omega
+omega
+by_contra have have rcases try
+omega
+omega
+by_contra have have rcases try
+omega
+omega
+have interval_cases norm_num try
+omega
+have interval_cases norm_num try
+omega

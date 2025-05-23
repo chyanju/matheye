@@ -1,0 +1,62 @@
+have have have have have have have have exact
+intro rw_1_@1 norm_num
+intro rw_1_@1 norm_num
+by_cases have exact have have exact
+by_contra have have linarith
+linarith
+nlinarith
+by_contra have have contradiction
+linarith
+by_contra have contradiction
+linarith
+by_contra have have have linarith
+linarith
+by_contra have contradiction
+linarith
+nlinarith
+rw_1
+have have linarith
+by_cases exfalso exact by_cases exfalso exact rw_1
+have rw_1 have rw_1
+norm_num
+rw_1 norm_num
+have have have have have have have exact
+
+have rw_1 have rw_1
+norm_num
+rw_1 norm_num
+
+intro have have contradiction
+
+have have have exact
+
+rw_1 simp_1
+apply_1 simp_all_1
+
+rw_1_@1 exact
+have have exact
+
+have field_simp nlinarith_2
+
+have have rw_1
+rw_1
+have rw_1 rw_1 rw_1 ring_nf
+ring
+have rw_1 have exact
+have
+cases' have have positivity have have have exact
+
+
+have have exact
+intro subst norm_num
+apply exact exact
+
+
+have exact
+have have exact
+
+rw_1
+have have have calc
+
+norm_num
+linarith

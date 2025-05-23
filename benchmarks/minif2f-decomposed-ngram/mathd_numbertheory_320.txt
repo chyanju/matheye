@@ -1,0 +1,19 @@
+have have have exact
+norm_num
+have have have rw_1_@1 have have have exact
+exact
+
+have exact
+omega
+
+simpa_1
+have have omega
+norm_num
+by_contra have have rw_1_@1 omega
+have have exact
+
+by_contra have contradiction
+omega
+apply omega
+have rw_1_@1 omega
+apply exact

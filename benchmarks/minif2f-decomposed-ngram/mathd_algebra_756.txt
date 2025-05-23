@@ -1,0 +1,30 @@
+have have have
+by_contra have have have
+linarith
+have have norm_num linarith
+
+apply
+
+have have have rw_1_@1 have have exact
+rw_1
+rw_1_@1 simp_all_1
+have rw_1 have rw_1
+norm_num
+rw_1 norm_num
+linarith
+apply linarith
+have have have rw_1_@1 have have have have have have rw_1_@1 have have exact
+
+
+
+exact_mod_cast
+rw_1
+have rw_1_@1 linarith
+rw_1
+norm_num
+rw_1 norm_num
+rw_2
+linarith
+apply linarith
+rw_2 have rw_1
+norm_num_3

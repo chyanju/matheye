@@ -1,0 +1,8 @@
+have have have exact
+have apply
+intro induction
+have exact
+omega
+have have exact
+
+omega

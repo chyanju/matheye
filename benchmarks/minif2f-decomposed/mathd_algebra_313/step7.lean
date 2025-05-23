@@ -1,0 +1,1 @@
+theorem h₅₄ (v i z : ℂ) (h₀ : v = i * z) (h₁ : v = 1 + Complex.I) (h₂ : z = 2 - Complex.I) (h₃ : i * z = 1 + Complex.I) (h₄ h₅₁ : i * (2 - Complex.I) = 1 + Complex.I) (h₅₃ : 2 - Complex.I ≠ 0) : i * (2 - Complex.I) = 1 + Complex.I := by linear_combination h₅₁

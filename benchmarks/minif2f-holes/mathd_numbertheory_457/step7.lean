@@ -1,0 +1,7 @@
+import Mathlib
+import Aesop
+set_option maxHeartbeats 0
+open BigOperators Real Nat Topology Rat
+macro "hole" : tactic => `(tactic| admit)
+theorem h₆ (n : ℕ) (h₀ : 0 < n) (h₁ : 80325 ∣ n !) (h₂ : 17 ∣ 80325) (h₃ : 17 ∣ n !) (h₄ : n < 17 → False) (h₅ : ¬17 ≤ n) : n < 17 := by -- linarith
+  hole

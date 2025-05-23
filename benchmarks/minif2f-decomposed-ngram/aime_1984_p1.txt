@@ -1,0 +1,13 @@
+have have
+intro induction
+have have rw_1_@1
+apply intro rw_1
+calc
+norm_num_3
+linarith
+linarith
+have rw_1
+apply intro rw_1
+calc
+norm_num_3
+rw_1 norm_num

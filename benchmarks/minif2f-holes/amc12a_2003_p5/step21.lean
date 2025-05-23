@@ -1,0 +1,7 @@
+import Mathlib
+import Aesop
+set_option maxHeartbeats 0
+open BigOperators Real Nat Topology Rat
+macro "hole" : tactic => `(tactic| admit)
+theorem h₃₆ (A M C : ℕ) (h₀ : A ≤ 9 ∧ M ≤ 9 ∧ C ≤ 9) (h₁ : 10 + 100 * C + 1000 * M + 10000 * A + (12 + 100 * C + 1000 * M + 10000 * A) = 123422) (h₂ : A = 6) (h₃₁ : A ≤ 9) (h₃₂ : M ≤ 9) (h₃₃ : C ≤ 9) (h₃₄ : ofDigits 10 [0, 1, C, M, A] = 10 + 100 * C + 1000 * M + 10000 * A) (h₃₅ : ofDigits 10 [2, 1, C, M, A] = 12 + 100 * C + 1000 * M + 10000 * A) : 10 + 100 * C + 1000 * M + 10000 * A + (12 + 100 * C + 1000 * M + 10000 * A) = 123422 := by -- linarith
+  hole

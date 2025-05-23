@@ -1,0 +1,2 @@
+theorem h₉ (p q : ℕ) (h₀ : Nat.Prime p ∧ Nat.Prime q) (h₁ : 4 ≤ p ∧ p ≤ 18) (h₂ : 4 ≤ q ∧ q ≤ 18) (h₃ : p = 5 ∨ p = 7 ∨ p = 11 ∨ p = 13 ∨ p = 17) (h₄ : q = 5 ∨ q = 7 ∨ q = 11 ∨ q = 13 ∨ q = 17) (h₅ : p * q ≥ p + q) (h₆ : p * q - (p + q) ≠ 194) (h₇ : p * q - (p + q) = 194) (h₈ : p * q - (p + q) ≠ 194) : p * q - (p + q) = 194 := by
+  simpa [Nat.mul_sub_left_distrib, Nat.mul_sub_right_distrib, Nat.add_assoc] using h₇

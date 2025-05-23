@@ -1,0 +1,25 @@
+have have have have have have exact
+have have have have have exact
+have exact
+norm_num norm_num
+
+norm_num
+linarith
+linarith
+have have exact
+decide
+have norm_num simp_all_1
+
+have rw_1 have rw_1 norm_num_1
+norm_num
+norm_num norm_num
+have have exact
+decide
+have norm_num simp_all_1
+
+have have have have rw_3 norm_num
+norm_num norm_num
+norm_num
+linarith
+linarith
+rw_1 norm_num

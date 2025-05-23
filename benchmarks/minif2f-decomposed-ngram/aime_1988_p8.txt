@@ -1,0 +1,68 @@
+have have have have have have have have have have have exact
+have exact
+have exact_mod_cast
+have have exact
+decide
+simpa
+have have have have have exact_mod_cast
+have have norm_num linarith
+norm_num
+
+exact
+exact_mod_cast
+exact
+rw_1_@1 ring_nf linarith
+have rw_1 exact_mod_cast
+apply norm_num
+have have have have have exact_mod_cast
+have have norm_num ring_nf try try
+norm_num
+
+exact
+exact_mod_cast
+exact
+rw_1_@1 ring_nf linarith
+have have have have have exact_mod_cast
+have have norm_num ring_nf try try
+norm_num
+
+exact
+exact_mod_cast
+exact
+rw_1_@1 ring_nf linarith
+have rw_1 exact_mod_cast
+apply norm_num
+have have have have have exact_mod_cast
+have have norm_num ring_nf try try
+norm_num
+
+exact
+exact_mod_cast
+exact
+rw_1_@1 ring_nf linarith
+have rw_1 exact_mod_cast
+apply norm_num
+have have have have have exact_mod_cast
+have have norm_num ring_nf try try
+norm_num
+
+exact
+exact_mod_cast
+exact
+rw_1_@1 ring_nf linarith
+have have have have have exact_mod_cast
+have have norm_num ring_nf try try
+norm_num
+
+exact
+exact_mod_cast
+exact
+rw_1_@1 ring_nf linarith
+have have have have have exact_mod_cast
+have have norm_num ring_nf try try
+norm_num
+
+exact
+exact_mod_cast
+exact
+rw_1_@1 ring_nf linarith

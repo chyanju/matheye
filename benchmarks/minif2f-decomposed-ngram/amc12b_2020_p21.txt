@@ -1,0 +1,44 @@
+have
+omega
+
+
+have have exact_mod_cast
+exact_mod_cast
+have have_1 exact
+exact_mod_cast
+have have have have have_1 exact
+exact_mod_cast
+linarith
+linarith
+norm_cast try try try try try try try try
+rw_1 omega
+omega
+use have omega
+
+have have have have exact_mod_cast
+exact_mod_cast
+rw_1 ring_nf norm_num field_simp ring_nf norm_cast linarith
+linarith
+norm_cast try try try try try
+have have have exact
+have exact
+have have linarith
+exact_mod_cast
+exact
+
+nlinarith_2
+have have have exact
+have exact
+have have linarith
+have linarith
+exact_mod_cast
+linarith_2
+
+nlinarith_2
+norm_cast
+norm_cast
+by_contra have have nlinarith
+
+
+omega
+rw_1 norm_num

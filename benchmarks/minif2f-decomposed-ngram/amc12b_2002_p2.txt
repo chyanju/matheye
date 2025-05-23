@@ -1,0 +1,8 @@
+have have have exact
+have rw_1 have rw_1 have rw_1
+ring_nf
+have rw_1
+ring_nf
+ring_nf
+rw_1 norm_num
+rw_1 rw_1

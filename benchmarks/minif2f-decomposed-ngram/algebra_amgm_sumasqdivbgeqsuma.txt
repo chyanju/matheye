@@ -1,0 +1,46 @@
+have have have have have have exact
+have have have have have exact
+linarith
+linarith
+positivity
+field_simp_1
+have have have nlinarith_4
+positivity
+linarith
+positivity
+have have have have have exact
+linarith
+linarith
+positivity
+field_simp_1
+have have have nlinarith_4
+positivity
+linarith
+positivity
+have have have have have exact
+linarith
+linarith
+positivity
+field_simp_1
+have have have nlinarith_4
+positivity
+linarith
+positivity
+have have have have have exact
+linarith
+linarith
+positivity
+field_simp_1
+have have have nlinarith_4
+positivity
+linarith
+positivity
+have have have have have rw_1 linarith
+
+
+
+
+
+have have exact
+
+linarith

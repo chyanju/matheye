@@ -1,0 +1,6 @@
+have have have have have apply
+rw_1 norm_num
+rw_1_@1 norm_num_1_@1 try
+rw_1_@1 norm_num_1_@1 try
+rw_1_@1 norm_num_1_@1 try
+rw_3

@@ -1,0 +1,20 @@
+have have have have have have have apply
+have have have rw_2_@1 ring_nf linarith
+
+rw_1
+rw_1
+have have have rw_2_@1 ring_nf linarith
+
+rw_1
+rw_1
+have have have cases
+
+ring_nf linarith
+apply
+have have have cases
+
+ring_nf linarith
+apply
+cases
+cases
+rw_2 norm_num

@@ -1,0 +1,1 @@
+theorem h₂₁ (σ : ℝ ≃ ℝ) (h : σ.toFun 2 = σ.invFun 2) (h₁ : σ.toFun (σ.toFun 2) = σ.toFun (σ.invFun 2)) : σ.toFun (σ.invFun 2) = 2 := by apply Equiv.apply_symm_apply

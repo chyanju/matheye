@@ -1,0 +1,7 @@
+import Mathlib
+import Aesop
+set_option maxHeartbeats 0
+open BigOperators Real Nat Topology Rat
+macro "hole" : tactic => `(tactic| admit)
+theorem h₈ (a b c d : ℕ) (h₀ : a * b * c * d = 8!) (h₁ : a * b + a + b = 524) (h₂ : b * c + b + c = 146) (h₃ : c * d + c + d = 104) (h_fact : 8! = 40320) (h_ab : (a + 1) * (b + 1) = 525) (h₄ : a + 1 ∣ 525) (h₅ : a + 1 = 3) (h₆ : a = 2) (h₇ : 2 * b + 2 + b = 524) : b = 174 := by -- nlinarith
+  hole

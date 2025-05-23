@@ -1,0 +1,24 @@
+have have have
+norm_num_1_@1
+have have exact
+
+calc
+have have rcases have have rw_1_@1 norm_num nlinarith have have rw_1_@1 norm_num have have rw_2_@1 norm_num_2_@1 ring_nf omega have have rw_1_@1 norm_num have have rw_2_@1 norm_num_2_@1 ring_nf omega have have rw_1_@1 norm_num have have rw_2_@1 norm_num_2_@1 ring_nf omega have have rw_1_@1 norm_num have have rw_2_@1 norm_num_2_@1 ring_nf omega have have rw_1_@1 norm_num have have rw_1_@1 norm_num try have exact have have rw_1_@1 norm_num have have rw_2_@1 norm_num_2_@1 ring_nf omega have have rw_1_@1 norm_num have have rw_2_@1 norm_num_2_@1 ring_nf omega have have rw_1_@1 norm_num have have rw_2_@1 norm_num_2_@1 ring_nf omega have have rw_1_@1 norm_num have have rw_2_@1 norm_num_2_@1 ring_nf omega have have rw_1_@1 norm_num have have rw_2_@1 norm_num_2_@1
+use linarith
+
+
+norm_num
+omega
+
+nlinarith
+
+have rw_1_@1 norm_num try
+
+have rw_1_@1 ring_nf have interval_cases norm_num
+
+by_contra have have omega
+omega
+nlinarith
+have rw_1_@1 ring_nf omega
+
+rw_2

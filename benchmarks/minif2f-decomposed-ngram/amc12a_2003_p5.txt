@@ -1,0 +1,48 @@
+have have have have apply
+have have have have_1_@5 have_1_@5 rw_2_@1 have have have have have have interval_cases norm_num try
+
+
+
+simp_1_@6 ring_nf
+simp_1_@6 ring_nf
+linarith
+linarith
+omega
+omega
+by_contra push_neg have rw_1_@1 have have omega
+omega
+omega
+have have omega
+
+
+by_contra push_neg have have have have omega
+omega
+omega
+omega
+omega
+have have have have_1_@5 have_1_@5 rw_2_@1 have have have have rw_1_@1 have have interval_cases norm_num try
+
+
+
+simp_1_@6 ring_nf
+simp_1_@6 ring_nf
+linarith
+linarith
+omega
+omega
+omega
+by_contra push_neg have have omega
+omega
+have nlinarith
+omega
+have have have have_1_@5 have_1_@5 rw_2_@1 have have have have rw_2_@1 norm_num omega
+
+
+
+simp_1_@6 ring_nf
+simp_1_@6 ring_nf
+linarith
+linarith
+omega
+omega
+rw_3

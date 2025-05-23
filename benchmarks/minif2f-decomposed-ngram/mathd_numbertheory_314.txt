@@ -1,0 +1,22 @@
+have have have have exact
+norm_num_2_@2
+rw_1_@1 exact
+intro have have have have rcases
+
+
+
+have have have have exact
+
+
+
+have have obtain have have have interval_cases norm_num_1_@1
+
+
+linarith
+by_contra have rw_1_@1 omega
+omega
+by_contra have have omega
+omega
+nlinarith
+by_contra have exact
+omega

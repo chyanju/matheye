@@ -1,0 +1,14 @@
+have have rw_1
+have rw_2_@1 norm_num linarith
+rw_1_@1
+have have exact
+
+have have omega
+by_contra have have have omega
+omega
+nlinarith
+nlinarith
+by_contra have have have omega
+omega
+nlinarith
+nlinarith

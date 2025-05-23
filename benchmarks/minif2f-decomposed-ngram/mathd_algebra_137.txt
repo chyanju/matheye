@@ -1,0 +1,5 @@
+have have have apply
+have ring_nf linarith
+
+norm_cast
+norm_num try

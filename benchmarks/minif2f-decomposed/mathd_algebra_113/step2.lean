@@ -1,0 +1,1 @@
+theorem h₀ (x : ℝ) : (x - 7) ^ 2 ≥ 0 := by nlinarith [sq_nonneg (x - 7)] <;> linarith

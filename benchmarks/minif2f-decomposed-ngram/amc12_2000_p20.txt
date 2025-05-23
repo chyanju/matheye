@@ -1,0 +1,73 @@
+have have have have have have have have have have have have have exact
+have have field_simp nlinarith_3
+linarith
+
+have have field_simp nlinarith_3
+linarith
+
+have have field_simp nlinarith_3
+linarith
+
+by_contra have have have have nlinarith
+linarith
+linarith
+
+nlinarith
+have have have have exact
+
+
+linarith
+have have exact
+have nlinarith
+
+have field_simp nlinarith
+linarith
+have have have have exact
+
+linarith
+by_contra have have have nlinarith
+linarith
+
+nlinarith
+have have have exact
+
+nlinarith
+have field_simp nlinarith
+linarith
+by_contra have have have have nlinarith
+linarith
+linarith
+
+nlinarith
+have have have exact
+
+
+rw_2 have have field_simp_2 try
+have have linarith
+linarith
+have have field_simp_1 rw_1 field_simp_1 nlinarith
+linarith
+exact_mod_cast
+have have by_contra have have have have rw_1_@1 norm_num try try
+
+linarith
+linarith
+linarith
+
+rw_1 field_simp_1_@1 nlinarith
+have have rw_1_@1 have have have field_simp_1_@1 ring_nf nlinarith_1
+
+
+
+linarith
+by_contra have have rw_1_@1 norm_num
+linarith
+linarith
+have have exact
+
+nlinarith_1
+have rw_1 rw_1 norm_num
+
+have rw_1 rw_1 norm_num
+
+rw_3 norm_num

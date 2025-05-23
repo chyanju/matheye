@@ -1,0 +1,17 @@
+have have have have exact
+have have have exact
+have rw_3_@1 linarith
+ring
+have rw_3_@1 linarith
+ring
+linarith
+have have have exact
+have rw_3_@1 linarith
+ring
+have rw_3_@1 linarith
+ring
+linarith
+have rw_4_@1 nlinarith_4
+ring
+have rw_1 rw_4 ring_nf
+ring

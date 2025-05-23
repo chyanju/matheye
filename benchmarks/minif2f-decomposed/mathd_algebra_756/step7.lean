@@ -1,0 +1,1 @@
+theorem h₄ (a b : ℝ) (h₀ : 2 ^ a = 32) (h₁ : a ^ b = 125) (h₂ : a > 0) : Real.log (2 ^ a) = Real.log 32 := by rw [h₀]

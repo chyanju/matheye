@@ -1,0 +1,1 @@
+theorem h₉ (n : ℕ) (h₀ : 10 ≤ n) (h₂ : ∃ t, t ^ 3 = n) (t : ℕ) (ht : 3 ^ 3 = n) (h₄ : t ≥ 3) (h₅ : ¬t ≥ 4) (h₆ : t = 3) (h₇ : n = 27) (x : ℕ) (hx : x ^ 2 = n) (h₈ : x ^ 2 = 27) : x ≤ 5 := by nlinarith

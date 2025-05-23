@@ -1,0 +1,1 @@
+theorem h₂₂ (h₀ : Real.log 80 = 4 * Real.log 2 + Real.log 5) (h₁ : Real.log 40 = 3 * Real.log 2 + Real.log 5) (h₂₁ : Real.log 160 = Real.log (2 ^ 5 * 5)) : Real.log (2 ^ 5 * 5) = Real.log (2 ^ 5) + Real.log 5 := by rw [Real.log_mul (by positivity) (by positivity)]

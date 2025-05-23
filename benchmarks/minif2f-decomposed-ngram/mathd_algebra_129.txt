@@ -1,0 +1,24 @@
+have rw_1_@1
+norm_num_3 ring_nf norm_num linarith
+have rw_1_@1
+
+have have exact
+
+linarith
+have have exact
+
+have have exact
+
+linarith
+have have exact
+
+have have have exact
+
+
+have have exact
+
+have have rw_1_@1 have have exact
+
+field_simp_1
+linarith
+apply_fun ring_nf nlinarith

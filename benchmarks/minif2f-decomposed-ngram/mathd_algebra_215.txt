@@ -1,0 +1,5 @@
+have have apply
+apply intro simp_only_3 constructor intro have have cases intro cases
+exact
+apply intro apply apply nlinarith
+rw_1 norm_num_1

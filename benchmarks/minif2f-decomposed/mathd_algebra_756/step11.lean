@@ -1,0 +1,1 @@
+theorem h₆₂ (a b : ℝ) (h₀ : 2 ^ a = 32) (h₁ : a ^ b = 125) (h₂ : a > 0) (h₄ : Real.log (2 ^ a) = Real.log 32) (h₅ : a * Real.log 2 = Real.log 32) (h₆₁ : Real.log 32 = Real.log (2 ^ 5)) : Real.log (2 ^ 5) = 5 * Real.log 2 := by rw [Real.log_pow] <;> norm_num <;> linarith

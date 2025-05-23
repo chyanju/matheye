@@ -1,0 +1,1 @@
+theorem h₅₄ (a b c : ℝ) (h₀ : 0 < a ∧ 0 < b ∧ 0 < c) (h₁ : a * (b + c) = 152) (h₂ : b * (c + a) = 162) (h₃ : c * (a + b) = 170) (h₄ : a * b + a * c + b * c = 242) (h₅₁ : a * b + a * c = 152) (h₅₃ : a * c = 80) : a * b = 72 := by nlinarith

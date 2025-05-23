@@ -1,7 +1,6 @@
 name = "benchmarks"
 version = "0.1.0"
 keywords = ["math"]
-defaultTargets = ["Benchmarks"]
 
 [leanOptions]
 pp.unicode.fun = true # pretty-prints `fun a ↦ b`

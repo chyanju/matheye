@@ -1,0 +1,1 @@
+theorem h1₄₃ (h1₁ : 2 * sin (π / 7) * cos (π / 7) = sin (2 * π / 7)) (h1₂ : 2 * sin (π / 7) * cos (2 * π / 7) = sin (3 * π / 7) - sin (π / 7)) (h1₃ : 2 * sin (π / 7) * cos (3 * π / 7) = sin (4 * π / 7) - sin (2 * π / 7)) (h1₄₁ : sin (4 * π / 7) = sin (π - 3 * π / 7)) : sin (π - 3 * π / 7) = sin (3 * π / 7) := by simp [Real.sin_pi_sub]

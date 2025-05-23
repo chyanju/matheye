@@ -1,0 +1,1 @@
+theorem h₂ (i m o : ℕ) (h₀ : i ≠ m ∧ m ≠ o ∧ o ≠ i) (h₁ : i * m * o = 2001) (h_pos_i : i > 0) (h : ¬m > 0) : m = 0 := by omega

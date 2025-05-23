@@ -1,0 +1,8 @@
+have have_1_@3 have_5 have have have have apply
+norm_num_1_@2
+rw_1 norm_num_1_@2
+rw_1_@1 rw_1
+simp_4_@1 omega
+simp_4_@1 omega
+simp_4_@1 omega
+subst_vars norm_num

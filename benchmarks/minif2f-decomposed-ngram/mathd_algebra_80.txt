@@ -1,0 +1,8 @@
+have have have exact
+intro apply linarith
+have have field_simp linarith
+
+
+have have exact
+
+

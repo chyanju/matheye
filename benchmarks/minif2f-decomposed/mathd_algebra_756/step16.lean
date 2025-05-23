@@ -1,0 +1,1 @@
+theorem h₉ (a b : ℝ) (h₀ : 2 ^ a = 32) (h₁ : a ^ b = 125) (h₂ : a > 0) (h₃ : a = 5) (h₅ : a > 0) (h₆ : a = 5) (h₇ h₈ : 5 ^ b = 125) : Real.log (5 ^ b) = Real.log 125 := by rw [h₈]

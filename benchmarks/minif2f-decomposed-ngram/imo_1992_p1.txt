@@ -1,0 +1,70 @@
+have have have have exact
+linarith_1
+by_contra have have have have have linarith
+linarith
+linarith_1
+linarith
+linarith_1
+linarith_1
+by_contra have have have have have linarith
+linarith
+linarith_1
+linarith
+linarith_1
+linarith_1
+have have have have have obtain have have have rcases have have have have have exfalso norm_num_3_@1 have have
+linarith
+linarith
+linarith
+positivity
+obtain refine' linarith
+by_contra have have have have have have have linarith
+linarith
+nlinarith_3
+linarith
+linarith
+linarith
+linarith
+have nlinarith
+nlinarith
+by_contra have have have have have have have have have linarith
+linarith
+linarith
+linarith
+linarith
+nlinarith
+nlinarith
+nlinarith
+linarith
+have linarith
+nlinarith_3
+omega
+ring_nf linarith
+have ring_nf nlinarith
+linarith
+by_contra have have have have have have nlinarith
+by_contra have have contradiction
+linarith
+linarith
+linarith
+linarith
+nlinarith
+nlinarith
+nlinarith
+by_contra have have have have have nlinarith
+by_contra have have contradiction
+linarith
+linarith
+linarith
+nlinarith
+nlinarith
+nlinarith
+by_contra have have have have have have nlinarith
+by_contra have have contradiction
+linarith
+linarith
+linarith
+linarith
+nlinarith
+nlinarith
+nlinarith

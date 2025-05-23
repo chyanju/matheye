@@ -1,0 +1,1 @@
+theorem h₃₄ (x y : ℝ) (h₀ : (x + y) / 2 = 7) (h₁ : √(x * y) = √19) (h₂ : x + y = 14) (h₃₁ : √(x * y) = √19) (h : ¬x * y ≥ 0) (h₃₃ : x * y < 0) : √(x * y) = 0 := by rw [Real.sqrt_eq_zero_of_nonpos] <;> linarith

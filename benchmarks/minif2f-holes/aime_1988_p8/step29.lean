@@ -1,0 +1,9 @@
+import Mathlib
+import Aesop
+set_option maxHeartbeats 0
+open BigOperators Real Nat Topology Rat
+macro "hole" : tactic => `(tactic| admit)
+theorem h₇₇ (f : ℕ → ℕ → ℝ) (h₀ : ∀ (x : ℕ), 0 < x → f x x = (↑x : ℝ)) (h₁ : ∀ (x y : ℕ), 0 < x ∧ 0 < y → f x y = f y x) (h₂ : ∀ (x y : ℕ), 0 < x ∧ 0 < y → ((↑x : ℝ) + (↑y : ℝ)) * f x y = (↑y : ℝ) * f x (x + y)) (h₃ : f 2 2 = 2) (h₄ : f 2 4 = 4) (h₅ : f 4 2 = 4) (h₆ : f 4 6 = 12) (h₇₁ h₇₄ : (4 + 6) * f 4 6 = 6 * f 4 10) (h₇₅ : f 4 6 = 12) (h₇₆ : (4 + 6) * f 4 6 = 6 * f 4 10) : f 4 10 = 20 := by
+  --  rw [h₇₅] at h₇₆
+  --  --  ring_nf at h₇₆ ⊢ <;> linarith
+  hole

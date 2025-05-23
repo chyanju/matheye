@@ -1,0 +1,1 @@
+theorem h₂ (h₁ : 121 % 4 = 1) : 122 % 4 = 2 := by norm_num <;> rfl

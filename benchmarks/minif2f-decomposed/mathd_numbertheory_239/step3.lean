@@ -1,0 +1,1 @@
+theorem h_final (h_sum : ∑ k ∈ Finset.Icc 1 12, k = 78) : (∑ k ∈ Finset.Icc 1 12, k) % 4 = 2 := by rw [h_sum] <;> norm_num <;> rfl
