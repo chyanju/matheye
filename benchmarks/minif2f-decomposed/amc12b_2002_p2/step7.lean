@@ -1,1 +1,0 @@
-theorem h₂ (x : ℤ) (h₀ : x = 4) (h₁ : (3 * x - 2) * (4 * x + 1) - (3 * x - 2) * (4 * x) + 1 = 3 * x - 1) : 3 * x - 1 = 11 := by rw [h₀] <;> norm_num <;> ring_nf at * <;> norm_num <;> omega

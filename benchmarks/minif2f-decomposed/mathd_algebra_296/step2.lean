@@ -1,1 +1,0 @@
-theorem h₁  : 3491 - 60 = 3431 := by norm_num <;> rfl

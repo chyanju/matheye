@@ -1,7 +1,0 @@
-have have apply
-have have linarith
-rw_1_@1
-rw_1 linarith
-have have exact
-linarith
-linarith

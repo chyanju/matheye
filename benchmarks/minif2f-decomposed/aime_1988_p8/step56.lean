@@ -1,7 +1,0 @@
-theorem h₁₃₁ (f : ℕ → ℕ → ℝ) (h₀ : ∀ (x : ℕ), 0 < x → f x x = (↑x : ℝ)) (h₁ : ∀ (x y : ℕ), 0 < x ∧ 0 < y → f x y = f y x) (h₂ : ∀ (x y : ℕ), 0 < x ∧ 0 < y → ((↑x : ℝ) + (↑y : ℝ)) * f x y = (↑y : ℝ) * f x (x + y)) (h₃ : f 2 2 = 2) (h₄ : f 2 4 = 4) (h₅ : f 4 2 = 4) (h₆ : f 4 6 = 12) (h₇ : f 4 10 = 20) (h₈ : f 10 4 = 20) (h₉ : f 10 14 = 70) (h₁₀ : f 14 10 = 70) (h₁₁ : f 14 24 = 168) (h₁₂ : f 14 38 = 266) : (14 + 38) * f 14 38 = 38 * f 14 52 :=
-  by
-  have h₁₃₂ : 0 < (14 : ℕ) ∧ 0 < (38 : ℕ) := by sorry
-  have h₁₃₃ := h₂ 14 38 h₁₃₂
-  norm_num at h₁₃₃ ⊢ <;> ring_nf at h₁₃₃ ⊢ <;> (try norm_num at h₁₃₃ ⊢) <;> (try linarith) <;>
-      (try ring_nf at h₁₃₃ ⊢ <;> norm_num at h₁₃₃ ⊢ <;> linarith) <;>
-    (try linarith)

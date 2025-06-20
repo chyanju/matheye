@@ -1,1 +1,0 @@
-theorem h₈ (a b : ℝ) (h₀ : 2 ^ a = 32) (h₁ : a ^ b = 125) (h₂ : a > 0) (h₃ : a = 5) (h₅ : a > 0) (h₆ : a = 5) (h₇ : 5 ^ b = 125) : 5 ^ b = 125 := by exact_mod_cast h₇

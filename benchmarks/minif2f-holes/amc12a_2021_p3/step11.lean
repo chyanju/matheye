@@ -1,7 +1,0 @@
-import Mathlib
-import Aesop
-set_option maxHeartbeats 0
-open BigOperators Real Nat Topology Rat
-macro "hole" : tactic => `(tactic| admit)
-theorem h₆ (x y : ℕ) (h₀ : x + y = 17402) (h₁ : 10 ∣ x) (h₂ : x / 10 = y) (h₃ : x = 10 * y) (h₄ : y = 1582) (h₅ : x = 15820) : (↑x : ℤ) - (↑y : ℤ) = 14238 := by -- -- rw [h₅, h₄] <;> norm_num <;> rfl
-  hole

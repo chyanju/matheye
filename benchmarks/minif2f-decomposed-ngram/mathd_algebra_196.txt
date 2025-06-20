@@ -1,5 +1,0 @@
-have have exact
-apply intro simp_only_3 constructor intro have have cases intro cases
-
-apply linarith
-rw_1 norm_num_1

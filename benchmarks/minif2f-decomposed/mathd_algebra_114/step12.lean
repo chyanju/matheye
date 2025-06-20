@@ -1,1 +1,0 @@
-theorem h₄₈ (a : ℝ) (h₀ : a = 8) (h₁ : a > 0) (h₂ : (a ^ 2) ^ (1 / 3) = a ^ (2 / 3)) (h₃ : (16 * (a ^ 2) ^ (1 / 3)) ^ (1 / 3) = (16 * a ^ (2 / 3)) ^ (1 / 3)) (h₄₁ : a = 8) (h₄₂ : a > 0) (h₄₆ : Real.log (8 ^ (2 / 3)) = 2 / 3 * Real.log 8) (h₄₇ : Real.log 8 = Real.log (2 ^ 3)) : Real.log (2 ^ 3) = 3 * Real.log 2 := by rw [Real.log_pow] <;> norm_num

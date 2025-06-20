@@ -1,2 +1,0 @@
-theorem h2 (h1 : 100 ^ 2 - 7 ^ 2 = (100 - 7) * (100 + 7)) : 70 ^ 2 - 11 ^ 2 = (70 - 11) * (70 + 11) := by
-  norm_num [sub_mul, add_mul, mul_sub, mul_add, mul_one, mul_assoc] <;> ring_nf <;> norm_num <;> linarith

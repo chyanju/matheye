@@ -1,8 +1,0 @@
-have have have have exact
-omega
-omega
-omega
-have have have interval_cases interval_cases interval_cases norm_num
-omega
-omega
-omega

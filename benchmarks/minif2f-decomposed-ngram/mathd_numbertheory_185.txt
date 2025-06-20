@@ -1,4 +1,0 @@
-have have have rw_1
-rw_1_@1 simp_1_@2
-rw_1 rw_1
-rw_1

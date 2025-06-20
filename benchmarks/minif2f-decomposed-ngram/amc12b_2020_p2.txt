@@ -1,8 +1,0 @@
-have have have exact
-norm_num_6
-norm_num_6
-rw_2 have have have have field_simp_4 ring_nf norm_num linarith
-norm_num
-norm_num
-norm_num
-norm_num

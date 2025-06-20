@@ -1,1 +1,0 @@
-theorem h₅₁ (a b : ℝ) (h₀ : a ^ 2 + b ^ 2 = 1) (h₁ : a ≤ 1) (h₂ : a ≥ -1) (h₃ : b ≤ 1) (h₄ : b ≥ -1) (h₅ : a ≥ b) : |a - b| = a - b := by rw [abs_of_nonneg (sub_nonneg.mpr h₅)]

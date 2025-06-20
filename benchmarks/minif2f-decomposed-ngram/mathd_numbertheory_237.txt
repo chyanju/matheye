@@ -1,3 +1,0 @@
-have have apply
-rfl
-rw_1

@@ -1,5 +1,0 @@
-have have have apply
-ring_nf
-have rw_1
-ring_nf
-rw_1 rw_1

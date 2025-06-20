@@ -1,7 +1,0 @@
-import Mathlib
-import Aesop
-set_option maxHeartbeats 0
-open BigOperators Real Nat Topology Rat
-macro "hole" : tactic => `(tactic| admit)
-theorem h₃₂ (a b : ℕ) (h₀ : 1 ≤ a ∧ a ≤ 9 ∧ b ≤ 9) (h₁ : (10 * a + b) ^ 3 = 912673) (h₂ : 10 * a + b ≤ 97) (h : ¬10 * a + b ≥ 97) (h₃₁ : 10 * a + b ≤ 96) : (10 * a + b) ^ 3 ≤ 96 ^ 3 := by -- exact Nat.pow_le_pow_of_le_left (by omega) 3
-  hole

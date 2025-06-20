@@ -1,7 +1,0 @@
-import Mathlib
-import Aesop
-set_option maxHeartbeats 0
-open BigOperators Real Nat Topology Rat
-macro "hole" : tactic => `(tactic| admit)
-theorem h₃ (n : ℕ) (h₀ : n ≤ 9) (h₁ : 18 ∣ 374 * 10 + n) : n = 0 ∨ n = 1 ∨ n = 2 ∨ n = 3 ∨ n = 4 ∨ n = 5 ∨ n = 6 ∨ n = 7 ∨ n = 8 ∨ n = 9 := by -- omega
-  hole

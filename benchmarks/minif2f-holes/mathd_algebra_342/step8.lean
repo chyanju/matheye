@@ -1,7 +1,0 @@
-import Mathlib
-import Aesop
-set_option maxHeartbeats 0
-open BigOperators Real Nat Topology Rat
-macro "hole" : tactic => `(tactic| admit)
-theorem h₄₄ (a d : ℝ) (h₀ : ∑ k ∈ Finset.range 5, (a + (↑k : ℝ) * d) = 70) (h₁ : ∑ k ∈ Finset.range 10, (a + (↑k : ℝ) * d) = 210) (h₂ : 5 * a + 10 * d = 70) (h₃ : 10 * a + 45 * d = 210) (h₄₁ h₄₃ : 5 * a + 10 * d = 70) : a + 2 * d = 14 := by -- linarith
-  hole

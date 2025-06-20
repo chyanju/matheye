@@ -1,1 +1,0 @@
-theorem h₆ (n : ℕ) (h₀ h₃ : 3 * n % 11 = 2) : 3 * (n % 11) = 3 * n % 33 := by omega

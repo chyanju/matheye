@@ -1,3 +1,0 @@
-theorem h₅₄₃ (S : Finset ℝ) (h₀ : ∀ (x : ℝ), x ∈ S ↔ 0 ≤ x ∧ x ≤ π ∧ sin (π / 2 * cos x) = cos (π / 2 * sin x)) (x : ℝ) (h : 0 ≤ x ∧ x ≤ π ∧ sin (π / 2 * cos x) = cos (π / 2 * sin x)) (h₂ : 0 ≤ x) (h₃ : x ≤ π) (h₄ : cos (π / 2 * (1 - cos x)) = cos (π / 2 * sin x)) (h₅₁ : sin (π / 2 * cos x) = cos (π / 2 * (1 - cos x))) (h₅₃ : cos (π / 2 * (1 - cos x)) = cos (π / 2 * sin x)) (h₅₄₁ : π / 2 * (1 - cos x) ≥ 0) : sin x ≥ 0 := by
-  apply Real.sin_nonneg_of_mem_Icc
-  constructor <;> nlinarith [Real.pi_gt_three, Real.pi_pos, Real.two_le_pi]

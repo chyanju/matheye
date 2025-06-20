@@ -1,1 +1,0 @@
-theorem h₂ (f : ℝ → ℝ) (h₀ : ∀ (x : ℝ), f x = 5 * x + 4) (h₁ : f 1 = 5 * 1 + 4) : f 1 = 9 := by rw [h₁] <;> norm_num <;> linarith

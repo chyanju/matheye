@@ -1,7 +1,0 @@
-import Mathlib
-import Aesop
-set_option maxHeartbeats 0
-open BigOperators Real Nat Topology Rat
-macro "hole" : tactic => `(tactic| admit)
-theorem h₁₄ (a b c : ℝ) (h₀ : a ≤ b ∧ b ≤ c) (h₁ : a + b + c = 2) (h₂ : a * b + b * c + c * a = 1) (h₃ : 0 ≤ a) (h₄₁ : a ≤ b) (h₄₂ : b ≤ c) (h₄₃ : a + b + c = 2) (h₄₄ : a * b + b * c + c * a = 1) (h : c < 1) (h₅ : c < 1) (h₆ : a + b = 2 - c) (h₇ : a * b = 1 - c * (a + b)) (h₈ : a * b = (c - 1) ^ 2) (h₉ : (b - c) ^ 2 ≥ 0) (h₁₀ : (2 - c) ^ 2 - 4 * (c - 1) ^ 2 ≥ 0) (h₁₁ : c ≥ 2 / 3) (h₁₂ : 3 * c ^ 2 - 4 * c + 1 ≤ 0) (h₁₃ : c ≤ 1) : c ≥ 2 / 3 := by -- nlinarith
-  hole

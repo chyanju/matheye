@@ -1,1 +1,0 @@
-theorem h_fact (a b c d : ℕ) (h₀ : a * b * c * d = 8!) (h₁ : a * b + a + b = 524) (h₂ : b * c + b + c = 146) (h₃ : c * d + c + d = 104) : 8! = 40320 := by norm_num [Nat.factorial] <;> rfl

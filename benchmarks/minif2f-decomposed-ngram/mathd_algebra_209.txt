@@ -1,9 +1,0 @@
-have have have have exact
-have exact
-have rw_1_@1 norm_num linarith
-apply
-have rw_1_@1 norm_num linarith
-apply
-have rw_1_@1 norm_num linarith
-apply
-rw_1 rw_1

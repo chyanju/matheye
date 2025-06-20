@@ -1,3 +1,0 @@
-theorem h₆ (x : ℝ) (m : ℚ) (h₀ : 1 / cos x + tan x = 22 / 7) (h₁ : 1 / sin x + 1 / tan x = (↑m : ℝ)) (h_cos_ne_zero : cos x ≠ 0) (h h₂ : sin x = 0) (h₃ : tan x = 0) (h₄ : 1 / cos x + 0 = 22 / 7) (h₅ : 1 / cos x = 22 / 7) : cos x = 7 / 22 := by
-  have h₇ : Real.cos x ≠ 0 := h_cos_ne_zero
-  field_simp at h₅ ⊢ <;> nlinarith [Real.sin_sq_add_cos_sq x]

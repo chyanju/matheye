@@ -1,6 +1,0 @@
-have have have have have rw_1
-norm_num
-rw_1
-norm_num
-rw_2
-rw_1

@@ -1,2 +1,0 @@
-theorem h₂ (h₀ : 2 ^ 2014 - 2 ^ 2012 > 0) (h₁ : (2 ^ 2014 + 2 ^ 2012) / (2 ^ 2014 - 2 ^ 2012) = 5 / 3) : (2 ^ 2014 + 2 ^ 2012) / (2 ^ 2014 - 2 ^ 2012) = 5 / 3 := by
-  norm_num [pow_succ, add_assoc, mul_assoc, mul_comm, mul_left_comm] at h₁ ⊢ <;> ring_nf at h₁ ⊢ <;> simpa using h₁

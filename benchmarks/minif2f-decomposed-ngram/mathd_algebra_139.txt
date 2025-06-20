@@ -1,6 +1,0 @@
-have have apply
-have have have exact
-norm_num
-norm_num
-apply norm_num
-rw_1 norm_num_2

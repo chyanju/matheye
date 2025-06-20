@@ -1,9 +1,0 @@
-import Mathlib
-import Aesop
-set_option maxHeartbeats 0
-open BigOperators Real Nat Topology Rat
-macro "hole" : tactic => `(tactic| admit)
-theorem h₁₆ (z : ℂ) (h₀ :  12 * (z.re * z.re + z.im * z.im) =    2 * ((z.re + 2) * (z.re + 2) + z.im * z.im) +        ((z.re * z.re - z.im * z.im + 1) * (z.re * z.re - z.im * z.im + 1) + 2 * z.re * z.im * (2 * z.re * z.im)) +      31) (h₁₁ : (Complex.normSq : ℂ → ℝ) z = z.re * z.re + z.im * z.im) (h₁₂ : (Complex.normSq : ℂ → ℝ) (z + 2) = (z.re + 2) * (z.re + 2) + z.im * z.im) (h₁₃ :  (Complex.normSq : ℂ → ℝ) (z ^ 2 + 1) =    (z.re * z.re - z.im * z.im + 1) * (z.re * z.re - z.im * z.im + 1) + 2 * z.re * z.im * (2 * z.re * z.im)) (h₁₄ : z.re * z.re + z.im * z.im = z.re * z.re + z.im * z.im) (h₁₅ :  12 * (z.re * z.re + z.im * z.im) =    2 * ((z.re + 2) * (z.re + 2) + z.im * z.im) +        ((z.re * z.re - z.im * z.im + 1) * (z.re * z.re - z.im * z.im + 1) + 2 * z.re * z.im * (2 * z.re * z.im)) +      31) : z.re + 1 = 0 := by
-  --  nlinarith [sq_nonneg (z.re + 1), sq_nonneg (z.im), sq_nonneg (z.re - 1), sq_nonneg (z.re * z.re + z.im * z.im - 6),
-  --    sq_nonneg (z.re * z.re + z.im * z.im - 2 * z.re), sq_nonneg (z.re * z.re + z.im * z.im + 2 * z.re)]
-  hole

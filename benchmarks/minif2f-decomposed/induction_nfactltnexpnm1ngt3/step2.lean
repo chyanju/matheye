@@ -1,1 +1,0 @@
-theorem h_base (n : ℕ) (h₀ : 3 ≤ n) : 3! < 3 ^ (3 - 1) := by norm_num [Nat.factorial] <;> decide

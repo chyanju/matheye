@@ -1,6 +1,0 @@
-have have have have exact
-norm_num
-rw_1 simp_1
-have norm_num
-linarith
-exfalso exact

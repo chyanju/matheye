@@ -1,2 +1,0 @@
-have apply
-norm_num_1_@2

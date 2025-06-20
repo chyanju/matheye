@@ -1,1 +1,0 @@
-theorem h₆₃ (h₁ : ∀ k ∈ Finset.Icc 1 20, logb (5 ^ k) (3 ^ k ^ 2) = (↑k : ℝ) * logb 5 3) (h₂ : ∑ k ∈ Finset.Icc 1 20, logb (5 ^ k) (3 ^ k ^ 2) = 210 * logb 5 3) (h₃ : ∀ k ∈ Finset.Icc 1 100, logb (9 ^ k) (25 ^ k) = logb 3 5) (h₄ : ∑ k ∈ Finset.Icc 1 100, logb (9 ^ k) (25 ^ k) = 100 * logb 3 5) (h₅ h₆₂ : logb 5 3 * logb 3 5 = 1) : logb 5 3 * logb 3 5 = 1 := by exact_mod_cast h₆₂

@@ -1,3 +1,0 @@
-theorem h₇₂ (f g h : ℕ+ → ℕ) (h₀ : ∀ (x : ℕ+), f x = 12 * (↑x : ℕ) + 7) (h₁ : ∀ (x : ℕ+), g x = 5 * (↑x : ℕ) + 2) (h₂ : ∀ (x : ℕ+), h x = (f x).gcd (g x)) (h₃ : Fintype (↑(Set.range h) : Type)) (x : ℕ+) (h₄ : h x = (f x).gcd (g x)) (h₅ : f x = 12 * (↑x : ℕ) + 7) (h₆ : g x = 5 * (↑x : ℕ) + 2) : 5 * (12 * (↑x : ℕ) + 7) - 12 * (5 * (↑x : ℕ) + 2) = 11 := by
-  cases x with
-  | mk x hx => simp [Nat.mul_add, Nat.add_mul, Nat.mul_one, Nat.mul_zero, Nat.add_assoc] <;> ring_nf at * <;> omega

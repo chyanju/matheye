@@ -1,1 +1,0 @@
-theorem h₂₄ (a b : ℝ) (h₀ : 3 * a + 2 * b = 5) (h₁ h₂₂ : a + b = 2) (h₂₃ : 3 * a + 2 * b = 5) : b = 2 - a := by linarith

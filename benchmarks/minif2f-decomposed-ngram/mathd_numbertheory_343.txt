@@ -1,3 +1,0 @@
-have have apply
-norm_num_6
-rw_1

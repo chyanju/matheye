@@ -1,1 +1,0 @@
-theorem h₁  : 11 * 17 = 187 := by norm_num <;> rfl

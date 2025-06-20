@@ -1,2 +1,0 @@
-theorem h₅₂ (S : Finset ℝ) (h₀ : ∀ (x : ℝ), x ∈ S ↔ 0 ≤ x ∧ x ≤ π ∧ sin (π / 2 * cos x) = cos (π / 2 * sin x)) (x : ℝ) (h : 0 ≤ x ∧ x ≤ π ∧ sin (π / 2 * cos x) = cos (π / 2 * sin x)) (h₂ : 0 ≤ x) (h₃ : x ≤ π) (h₄ : sin (π / 2 * cos x) = cos (π / 2 * sin x)) : sin (π / 2 * cos x) = cos (π / 2 - π / 2 * cos x) := by
-  rw [← Real.cos_pi_div_two_sub] <;> ring_nf

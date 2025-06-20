@@ -1,1 +1,0 @@
-theorem h₂₃ (h₁ : ∀ k ∈ Finset.Icc 1 20, logb (5 ^ k) (3 ^ k ^ 2) = (↑k : ℝ) * logb 5 3) (h₂₁ : ∑ k ∈ Finset.Icc 1 20, logb (5 ^ k) (3 ^ k ^ 2) = ∑ k ∈ Finset.Icc 1 20, (↑k : ℝ) * logb 5 3) (h₂₂ : ∑ k ∈ Finset.Icc 1 20, (↑k : ℝ) * logb 5 3 = (∑ k ∈ Finset.Icc 1 20, (↑k : ℝ)) * logb 5 3) : ∑ k ∈ Finset.Icc 1 20, (↑k : ℝ) = 210 := by norm_num [Finset.sum_Icc_succ_top] <;> rfl

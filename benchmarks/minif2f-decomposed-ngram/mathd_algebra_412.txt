@@ -1,7 +1,0 @@
-have have apply
-have have have exact
-linarith
-ring
-linarith
-have exact
-apply linarith

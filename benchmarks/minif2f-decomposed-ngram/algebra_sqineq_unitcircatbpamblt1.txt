@@ -1,9 +1,0 @@
-have have have have have have exact
-nlinarith_1
-nlinarith_1
-nlinarith_4
-nlinarith_4
-nlinarith_2
-have have nlinarith_1
-ring
-nlinarith_2

@@ -1,3 +1,0 @@
-have exact
-have rcases norm_num
-omega

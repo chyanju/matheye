@@ -1,1 +1,0 @@
-theorem h₄ (a b c : ℝ) (h₀ : 0 < a ∧ 0 < b ∧ 0 < c) (h₁ : c < a + b) (h₂ : b < a + c) (h₃ : a < b + c) : 0 < b + c - a := by linarith [h₃] <;> linarith

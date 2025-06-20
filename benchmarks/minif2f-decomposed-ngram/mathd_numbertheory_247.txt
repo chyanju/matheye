@@ -1,9 +1,0 @@
-have exact
-have have rcases try
-have have rw_only_2_@1
-
-have omega
-have have omega
-omega
-omega
-

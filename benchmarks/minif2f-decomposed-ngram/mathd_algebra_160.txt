@@ -1,6 +1,0 @@
-have have have exact
-have linarith
-
-have exact
-
-rw_2 norm_num

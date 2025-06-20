@@ -1,4 +1,0 @@
-have have have apply
-norm_num
-norm_num
-rw_1 rw_2 rw_1_@2 rw_1 norm_num

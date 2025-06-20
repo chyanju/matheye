@@ -1,1 +1,0 @@
-theorem h₄ (x : ℝ) (a b c : ℕ) (h₀ : 0 < a ∧ 0 < b ∧ 0 < c ∧ 0 ≤ x) (h₁ : 2 * x ^ 2 = 4 * x + 9) (h₂ : x = ((↑a : ℝ) + √(↑b : ℝ)) / (↑c : ℝ)) (h₃ : c = 2) : x = ((↑a : ℝ) + √(↑b : ℝ)) / 2 := by rw [h₂, h₃] <;> ring_nf <;> field_simp <;> ring_nf

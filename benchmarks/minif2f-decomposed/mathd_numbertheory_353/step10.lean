@@ -1,2 +1,0 @@
-theorem h₅ (s : ℕ) (h₀ : s = ∑ k ∈ Finset.Icc 2010 4018, k) (h₂ : ∑ k ∈ Finset.Icc 2010 4018, k = ∑ t ∈ Finset.range 2009, (t + 2010)) (h₃ : ∑ t ∈ Finset.range 2009, (t + 2010) = ∑ t ∈ Finset.range 2009, t + ∑ t ∈ Finset.range 2009, 2010) (h₄ : ∑ t ∈ Finset.range 2009, t = 2009 * 1004) : ∑ t ∈ Finset.range 2009, 2010 = 2009 * 2010 := by
-  simp [Finset.sum_const, Finset.card_range] <;> ring_nf

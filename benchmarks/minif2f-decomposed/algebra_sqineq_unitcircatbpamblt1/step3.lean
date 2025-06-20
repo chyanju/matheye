@@ -1,1 +1,0 @@
-theorem h₂ (a b : ℝ) (h₀ : a ^ 2 + b ^ 2 = 1) (h₁ : a ^ 2 ≤ 1) : b ^ 2 ≤ 1 := by nlinarith [sq_nonneg a]

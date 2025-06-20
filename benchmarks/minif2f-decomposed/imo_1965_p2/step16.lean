@@ -1,3 +1,0 @@
-theorem h₁₁₉ (x y z : ℝ) (a : ℕ → ℝ) (h₀ : 0 < a 0 ∧ 0 < a 4 ∧ 0 < a 8) (h₁ : a 1 < 0 ∧ a 2 < 0) (h₂ : a 3 < 0 ∧ a 5 < 0) (h₃ : a 6 < 0 ∧ a 7 < 0) (h₄ : 0 < a 0 + a 1 + a 2) (h₅ : 0 < a 3 + a 4 + a 5) (h₆ : 0 < a 6 + a 7 + a 8) (h₇ : a 0 * x + a 1 * y + a 2 * z = 0) (h₈ : a 3 * x + a 4 * y + a 5 * z = 0) (h₉ : a 6 * x + a 7 * y + a 8 * z = 0) (h₁₀ : x = 0) (h₁₁₁ : a 1 * y + a 2 * z = 0) (h₁₁₂ : a 4 * y + a 5 * z = 0) (h₁₁₃ : a 7 * y + a 8 * z = 0) (hy : ¬y = 0) (hy_pos : y > 0) (hz : z ≤ y) (h₁₁₅ : a 3 * 0 + a 4 * y + a 5 * z ≥ (a 3 + a 4 + a 5) * y) : (a 3 + a 4 + a 5) * y > 0 := by
-  have h₁₂₀ : a 3 + a 4 + a 5 > 0 := h₅
-  nlinarith

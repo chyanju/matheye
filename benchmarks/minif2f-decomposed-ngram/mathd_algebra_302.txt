@@ -1,2 +1,0 @@
-have simpa
-norm_num_6

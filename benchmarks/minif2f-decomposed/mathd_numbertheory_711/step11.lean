@@ -1,1 +1,0 @@
-theorem h₇₂ (n : ℕ) (h₀ : 0 < 8 ∧ 0 < n) (h₁ : Nat.gcd 8 n = 8) (h₂ : Nat.lcm 8 n = 112) (h₃ : 8 * n = 896) (h₄ : 8 ∣ 112) (h₅ : 8 ∣ 8) : 8 * n = 896 := by norm_num [h₃] at * <;> nlinarith

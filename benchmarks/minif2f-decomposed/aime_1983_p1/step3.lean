@@ -1,1 +1,0 @@
-    theorem hy (x y z w : ℕ) (ht : 1 < x ∧ 1 < y ∧ 1 < z) (hw : 0 ≤ w) (h0 : Real.log (↑w : ℝ) / Real.log (↑x : ℝ) = 24) (h1 : Real.log (↑w : ℝ) / Real.log (↑y : ℝ) = 40) (h2 : Real.log (↑w : ℝ) / Real.log ((↑x : ℝ) * (↑y : ℝ) * (↑z : ℝ)) = 12) (hx : (↑x : ℝ) > 1) : (↑y : ℝ) > 1 := by norm_cast <;> linarith [ht.1, ht.2.1, ht.2.2]

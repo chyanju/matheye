@@ -1,5 +1,0 @@
-have have have have exact
-rw_1 norm_num
-rw_1 norm_num
-rw_2 norm_num
-rw_3 norm_num

@@ -1,4 +1,0 @@
-have have have exact
-ring_nf
-rw_1 linarith
-rw_1 norm_num

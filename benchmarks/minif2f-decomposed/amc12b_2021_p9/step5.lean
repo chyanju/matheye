@@ -1,1 +1,0 @@
-theorem h₀₃ (h₀₁ : Real.log 80 = Real.log (2 ^ 4 * 5)) (h₀₂ : Real.log (2 ^ 4 * 5) = Real.log (2 ^ 4) + Real.log 5) : Real.log (2 ^ 4) = 4 * Real.log 2 := by rw [Real.log_pow] <;> ring_nf <;> norm_num

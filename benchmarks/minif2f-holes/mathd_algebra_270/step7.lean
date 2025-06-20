@@ -1,7 +1,0 @@
-import Mathlib
-import Aesop
-set_option maxHeartbeats 0
-open BigOperators Real Nat Topology Rat
-macro "hole" : tactic => `(tactic| admit)
-theorem h₄ (f : ℝ → ℝ) (h₀ : ∀ (x : ℝ), x ≠ -2 → f x = 1 / (x + 2)) (h₁ : f 1 = 1 / 3) (h₂ : f (f 1) = f (1 / 3)) (h₃ : f (1 / 3) = 3 / 7) : f (f 1) = 3 / 7 := by -- rw [h₂, h₃] <;> norm_num
-  hole

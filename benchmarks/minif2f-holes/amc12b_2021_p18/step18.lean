@@ -1,7 +1,0 @@
-import Mathlib
-import Aesop
-set_option maxHeartbeats 0
-open BigOperators Real Nat Topology Rat
-macro "hole" : tactic => `(tactic| admit)
-theorem h₄₂ (z : ℂ) (h₀ : 12 * (Complex.normSq : ℂ → ℝ) z = 2 * (Complex.normSq : ℂ → ℝ) (z + 2) + (Complex.normSq : ℂ → ℝ) (z ^ 2 + 1) + 31) (h₁ : z.re = -1) (h₂ : z.re * z.re + z.im * z.im = 6) (h₃ : z ≠ 0) : z.im * z.im = 5 := by -- nlinarith
-  hole

@@ -1,8 +1,0 @@
-have have have exact
-have rw_1 have rw_1 ring
-ring
-
-have rw_1 have rw_1 ring
-ring
-
-linarith

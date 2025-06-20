@@ -1,7 +1,0 @@
-import Mathlib
-import Aesop
-set_option maxHeartbeats 0
-open BigOperators Real Nat Topology Rat
-macro "hole" : tactic => `(tactic| admit)
-theorem h₄ (x y n : ℕ+) (h₀ : (↑(↑x : ℕ) : ℝ) / 4 + (↑(↑y : ℕ) : ℝ) / 6 = ((↑(↑x : ℕ) : ℝ) + (↑(↑y : ℕ) : ℝ)) / (↑(↑n : ℕ) : ℝ)) (h₁ h₃ : (↑n : ℕ) = 5) : n = 5 := by -- -- apply PNat.eq <;> norm_cast at h₃ ⊢ <;> simp_all [PNat.ne_zero] <;> omega
-  hole

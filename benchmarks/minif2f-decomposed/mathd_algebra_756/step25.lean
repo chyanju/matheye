@@ -1,2 +1,0 @@
-theorem h₅₁ (a b : ℝ) (h₀ : 2 ^ a = 32) (h₁ : a ^ b = 125) (h₂ : a > 0) (h₃ : a = 5) (h₄ : b = 3) : 3 ^ 5 = 243 := by
-  norm_num [Real.rpow_def_of_pos, Real.rpow_def_of_nonneg, Real.log_pow] <;> ring_nf <;> norm_num <;> linarith

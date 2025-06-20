@@ -1,6 +1,0 @@
-have have have exact
-have linarith
-calc
-have rw_2 norm_num
-linarith
-rw_2 norm_num

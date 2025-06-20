@@ -1,2 +1,0 @@
-have exact
-norm_num

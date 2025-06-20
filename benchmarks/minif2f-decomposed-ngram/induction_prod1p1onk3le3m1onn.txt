@@ -1,4 +1,0 @@
-have have exact
-intro have exact
-intro induction' norm_num_1 rw_1 refine' cases
-apply
